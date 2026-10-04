@@ -1,0 +1,88 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  quality:
+    name: Typecheck + Tests + Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 5
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 23
+          cache: "pnpm"
+
+      - name: Install
+        run: pnpm install --frozen-lockfile=false --prefer-offline
+
+      - name: Typecheck
+        run: pnpm -r typecheck
+
+      - name: Unit tests
+        run: pnpm test
+
+      - name: Build web
+        run: pnpm --filter @vibeplan/web build
+
+      - name: Verify generated migrations
+        run: |
+            if [ ! -f packages/db/migrations/0000_initial.sql ]; then
+              echo "::error::0000_initial.sql отсутствует — миграции не сгенерированы"
+              exit 1
+            fi
+            if [ ! -f packages/db/migrations/meta/_journal.json ]; then
+              echo "::error::_journal.json отсутствует"
+              exit 1
+            fi
+            echo "OK — миграции на месте"
+
+  e2e:
+    name: Playwright e2e
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    needs: quality
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 5
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 23
+          cache: "pnpm"
+
+      - name: Install
+        run: pnpm install --frozen-lockfile=false --prefer-offline
+
+      - name: Install Playwright browsers
+        run: pnpm exec playwright install --with-deps chromium
+
+      - name: Build web
+        run: pnpm --filter @vibeplan/web build
+
+      - name: Run e2e
+        run: pnpm --filter @vibeplan/web exec playwright test
+        env:
+          E2E_BASE_URL: http://localhost:3000
+
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: apps/web/playwright-report/
+          retention-days: 7

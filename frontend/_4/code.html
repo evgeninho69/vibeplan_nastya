@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Coffee, Vanilla &amp; Matcha — Комьюнити &amp; Профиль Майи</title>
+<!-- Fonts & Material Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Script -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed": "#052108",
+            "tertiary-container": "#736054",
+            "on-background": "#1c1c19",
+            "error-container": "#ffdad6",
+            "surface-variant": "#e5e2dd",
+            "outline-variant": "#c3c8be",
+            "on-tertiary": "#ffffff",
+            "on-error-container": "#93000a",
+            "surface": "#fcf9f4",
+            "on-surface": "#1c1c19",
+            "tertiary-fixed": "#f7ddcf",
+            "inverse-on-surface": "#f3f0eb",
+            "surface-dim": "#dcdad5",
+            "surface-container-high": "#ebe8e3",
+            "on-tertiary-fixed-variant": "#544339",
+            "surface-container-low": "#f6f3ee",
+            "surface-bright": "#fcf9f4",
+            "on-tertiary-container": "#f6dcce",
+            "on-tertiary-fixed": "#261910",
+            "primary": "#365335",
+            "surface-tint": "#486646",
+            "secondary-container": "#ddd0ff",
+            "tertiary": "#5a483e",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed-variant": "#4a4167",
+            "inverse-primary": "#aecfa9",
+            "error": "#ba1a1a",
+            "on-primary-container": "#c8eac2",
+            "secondary-fixed-dim": "#ccc0ee",
+            "on-secondary-container": "#61577f",
+            "tertiary-fixed-dim": "#dac2b4",
+            "background": "#fcf9f4",
+            "outline": "#737970",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#aecfa9",
+            "inverse-surface": "#31302d",
+            "on-surface-variant": "#434841",
+            "on-primary-fixed-variant": "#314d30",
+            "on-error": "#ffffff",
+            "on-secondary-fixed": "#1e1539",
+            "primary-container": "#4d6b4b",
+            "surface-container-highest": "#e5e2dd",
+            "primary-fixed": "#c9ecc4",
+            "secondary-fixed": "#e8ddff",
+            "surface-container-lowest": "#ffffff",
+            "secondary": "#625980",
+            "surface-container": "#f0ede9"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "gutter-md": "1.5rem",
+            "margin": "1rem",
+            "space-xl": "2.25rem",
+            "space-md": "1rem",
+            "margin-md": "2rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "title-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-xl-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "title-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-family: 'Material Symbols Outlined';
+      font-weight: normal;
+      font-style: normal;
+      font-size: 20px;
+      line-height: 1;
+      letter-spacing: normal;
+      text-transform: none;
+      display: inline-block;
+      white-space: nowrap;
+      word-wrap: normal;
+      direction: ltr;
+      -webkit-font-feature-settings: 'liga';
+      -webkit-font-smoothing: antialiased;
+    }
+    
+    /* Tactile paper texture and ambient card depth */
+    .stationery-card {
+      box-shadow: 0 4px 16px -2px rgba(61, 50, 42, 0.04), 0 1px 3px 0 rgba(61, 50, 42, 0.02);
+      border: 1px solid rgba(61, 50, 42, 0.06);
+    }
+    .washi-tape {
+      background: linear-gradient(135deg, rgba(216, 230, 215, 0.75) 0%, rgba(246, 243, 238, 0.9) 100%);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen pb-28 selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Desktop Notification / Max Container Wrapper -->
+<div class="max-w-[480px] mx-auto min-h-screen flex flex-col relative bg-surface shadow-xl">
+<!-- TopAppBar (from Shared Components JSON: docked, full-width, no bottom border, soft elevation) -->
+<header class="sticky top-0 z-40 bg-surface-container-low shadow-sm flex justify-between items-center w-full px-margin py-space-sm">
+<div class="flex items-center gap-3">
+<!-- Leading Avatar -->
+<div class="relative w-10 h-10 rounded-full overflow-hidden border border-outline-variant/40 bg-surface-container-high p-0.5">
+<img class="w-full h-full object-cover rounded-full" data-alt="Delicate close-up portrait of Anya, a high school student with warm morning light filtering through cozy cafe blinds. Gentle natural expression, soft woolen knit sweater in creamy oat tones, minimalist Japanese cafe stationery aesthetic, serene warm palette with matcha accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjOFEHAXM2iQWPtclMoNdNUtiqvYrUTZIcPhIfLb7HDeBkur85DSnCe5DEqEpc9KtQVRz1fPu99vt1M4Bi0ipfDgEOgVwNbXBaL8aUzctU_HDrL1vNJXiTFRiwgzXLpKpyuAljK4dX5VqKeB6LFPVcEWPD9g-42j2JdXHKBiXzSdR1AMB_evDcF7txdrlf8MzW77XncSHoquParb0gzDbEaOo79Qco310oX9jOl7LeeCNHs6uYIAhtsA"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-primary-container border-2 border-surface rounded-full"></span>
+</div>
+<div>
+<!-- Shared headline from JSON: Привет, Аня 🌿 -->
+<h1 class="font-headline-lg-mobile text-headline-lg-mobile text-primary tracking-tight">Привет, Аня 🌿</h1>
+<div class="flex items-center gap-1.5 mt-0.5">
+<span class="font-label-md text-label-md text-on-surface-variant">11 «А» класс</span>
+<span class="inline-block w-1 h-1 rounded-full bg-outline"></span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+              Тьютор Майя v4.2 активна
+            </span>
+</div>
+</div>
+</div>
+<!-- Trailing Action: Settings / graphic_eq icon from JSON -->
+<button class="w-9 h-9 rounded-full flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.985]" title="Настройки звучания и атмосферы">
+<span class="material-symbols-outlined" data-icon="graphic_eq">graphic_eq</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 px-margin py-space-md space-y- space-y-4">
+<!-- Friendly Note / Sub-header bar -->
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]" data-icon="spa" style="font-variation-settings: 'FILL' 1;">spa</span>
+<span class="font-title-md text-title-md text-primary">Комьюнити &amp; Майя</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant bg-surface-container-high px-2.5 py-1 rounded-full">Четверг, 16 мая</span>
+</div>
+<!-- 1. Interactive Block: Свободные окошки с Ксюшей -->
+<section class="stationery-card bg-surface-container-lowest rounded-lg p-space-md relative overflow-hidden transition-all duration-200">
+<!-- Soft Washi Tape Visual Tab -->
+<div class="absolute -top-1 left-8 washi-tape px-4 py-0.5 rounded-b-md shadow-xs flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm text-primary font-semibold tracking-wide">ИДЕАЛЬНЫЙ ТАКТ</span>
+</div>
+<div class="pt-2">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2.5">
+<div class="relative w-11 h-11 rounded-full overflow-hidden bg-secondary-fixed/50 p-0.5 flex-shrink-0">
+<img class="w-full h-full object-cover rounded-full" data-alt="Cozy aesthetic candid portrait of Ksenia, Anya's best friend, smiling softly with a ceramic coffee mug in a modern Scandinavian library setting. High key warm cream lighting, paper texture tones, soft sage green elements, tranquil student lifestyle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFmiH42-i_XgH7vGLg50kUXsZB4JMS9Ve_HXAn9fa_JqbnZjfH-x9w9nHoFi3ttPi_1wKrEWgrwFfFkovuF0GoCPnUsWWkwRfUOR3VgRc952wMfgubYOHrOTGuUHSs_lLOXpEPYXCaHIhxdP8IjqNJW_bcOT0cqvENScSLzpUc5svXAFwQ4R4yS6D_m4Fh5QRUa-_xnREsjVVHOx2UD_jj_3qT0VnP9MIXI651OJKq28tll9LpZ9P6cw"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 bg-[#4D6B4B] rounded-full border border-surface"></span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface flex items-center gap-1.5">
+                  Окошко с Ксюшей ☕️✨
+                </h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Совпадение ритмов: <span class="text-primary font-semibold">100% без суеты</span></p>
+</div>
+</div>
+<div class="bg-primary-fixed/70 text-on-primary-fixed px-2.5 py-1 rounded-full font-label-md text-label-md flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]" data-icon="schedule">schedule</span>
+<span>75 мин</span>
+</div>
+</div>
+<!-- Matching window details in paper inset -->
+<div class="mt-3.5 bg-surface-container-low rounded-DEFAULT p-3 border border-outline-variant/30 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-primary font-title-md text-title-md">
+<span class="material-symbols-outlined text-[18px]" data-icon="local_cafe">local_cafe</span>
+<span>Четверг, 18:00 – 19:15</span>
+</div>
+<span class="font-label-sm text-label-sm text-secondary font-medium px-2 py-0.5 bg-secondary-fixed/60 rounded-full">Улица Маяковского</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant pl-6">
+              Кофейня <span class="text-on-surface font-medium">«Слой»</span>. Мягкая пауза: ровно после 7-го урока и за 45 минут до твоей вечерней гребли.
+            </p>
+</div>
+<!-- Quick Action Buttons -->
+<div class="mt-3.5 grid grid-cols-2 gap-2.5">
+<button class="bg-surface-container text-on-surface hover:bg-surface-container-high font-label-md text-label-md py-2.5 px-3 rounded-full flex items-center justify-center gap-1.5 transition-colors active:scale-[0.985]">
+<span class="material-symbols-outlined text-[17px] text-primary" data-icon="send">send</span>
+<span>Инвайт в TG</span>
+</button>
+<button class="bg-primary-container text-surface hover:bg-primary font-label-md text-label-md py-2.5 px-3 rounded-full flex items-center justify-center gap-1.5 shadow-sm transition-all active:scale-[0.985]">
+<span class="material-symbols-outlined text-[17px]" data-icon="event_available">event_available</span>
+<span>В календарь</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 2. AI Maya Fine-Tuning Card -->
+<section class="stationery-card bg-surface-container-lowest rounded-lg p-space-md space-y-4">
+<div class="flex items-center justify-between border-b border-surface-container-highest pb-3">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]" data-icon="support_agent">support_agent</span>
+</div>
+<div>
+<h2 class="font-title-md text-title-md text-on-surface">Настройка тьютора Майи</h2>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Эмпатичный ИИ-наставник</p>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant px-2 py-0.5 rounded-full bg-surface-container">Модель 4.2</span>
+</div>
+<!-- Tone Selector Pill -->
+<div class="space-y-1.5">
+<div class="flex justify-between items-center">
+<label class="font-label-md text-label-md text-on-surface">Текущий тон общения:</label>
+<span class="font-label-sm text-label-sm text-primary font-semibold">«Бережная подруга»</span>
+</div>
+<div class="p-3 rounded-DEFAULT bg-primary-fixed/20 border border-primary-fixed flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[20px] flex-shrink-0 mt-0.5" data-icon="favorite" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Безусловное принятие. Дедлайны как мягкие ориентиры, полное отсутствие вины за пропущенную главу биологии и фокус на здоровье.
+            </p>
+</div>
+</div>
+<!-- Deadline Softness Slider -->
+<div class="space-y-2">
+<div class="flex justify-between items-center">
+<span class="font-label-md text-label-md text-on-surface">Мягкость дедлайнов</span>
+<span class="font-label-md text-label-md text-primary font-bold px-2 py-0.5 rounded-full bg-primary-fixed">95% (сверхбережный)</span>
+</div>
+<!-- Tactile Range Track -->
+<div class="relative flex items-center">
+<input class="w-full h-2.5 bg-surface-container-high rounded-full appearance-none cursor-pointer accent-primary focus:outline-none" max="100" min="50" type="range" value="95"/>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm text-outline">
+<span>Академичный темп</span>
+<span>Мягкое течение</span>
+<span class="text-primary font-medium">Тотальный дзен</span>
+</div>
+</div>
+<!-- Memory Context Anchors -->
+<div class="space-y-2 pt-1">
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[17px] text-tertiary" data-icon="bookmark_heart">bookmark_heart</span>
+            Якоря памяти Майи (что она помнит):
+          </span>
+<div class="flex flex-wrap gap-1.5">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container text-on-surface font-body-sm text-body-sm border border-outline-variant/40">
+<span class="material-symbols-outlined text-[15px] text-primary" data-icon="emoji_food_beverage">emoji_food_beverage</span>
+              Матча на миндальном
+            </span>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-fixed/50 text-on-secondary-container font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[15px] text-secondary" data-icon="school">school</span>
+              Олимпиады ВШЭ / МГУ
+            </span>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container text-on-surface font-body-sm text-body-sm border border-outline-variant/40">
+<span class="material-symbols-outlined text-[15px] text-primary" data-icon="kayaking">kayaking</span>
+              Гребной клуб (Пн/Чт)
+            </span>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-tertiary-fixed/60 text-on-tertiary-fixed-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary" data-icon="group">group</span>
+              Дружба с Ксюшей
+            </span>
+</div>
+</div>
+<!-- Voice Memo Add Button -->
+<button class="w-full bg-surface-container-high hover:bg-surface-variant text-on-surface font-title-md text-title-md py-2.5 px-4 rounded-full flex items-center justify-center gap-2 border border-outline-variant/50 transition-colors active:scale-[0.985]">
+<span class="material-symbols-outlined text-[20px] text-primary" data-icon="mic">mic</span>
+<span>Надиктовать новый факт голосом</span>
+</button>
+</section>
+<!-- 3. Silent Study / Quiet Co-Working Space -->
+<section class="stationery-card bg-surface-container-lowest rounded-lg p-space-md space-y-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]" data-icon="headphones">headphones</span>
+<h3 class="font-title-md text-title-md text-on-surface">Тихая учеба с друзьями</h3>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold flex items-center gap-1 bg-primary-fixed/50 px-2 py-0.5 rounded-full">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-ping"></span>
+            3 человека в сети
+          </span>
+</div>
+<!-- Friend Current Status Card -->
+<div class="bg-surface-container-low rounded-DEFAULT p-3 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="relative w-9 h-9 rounded-full overflow-hidden bg-surface-container-highest">
+<img class="w-full h-full object-cover" data-alt="Soft aesthetic thumbnail photo of a student girl reading an encyclopedia in an atmospheric library corner with plants and a wooden study desk. Warm pastel lighting, matcha and beige tones, calm study vibes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANzoj5GoHSiSRgv7lvLAa-4sQ0QSnQbPFXdOg20MPY_JIEgYSJMWtwVnf5XoK8qki5tywNk_WASl-_cqvtbXgl5axua6mwU68CKKA3sgW8UhUPlyBGn4NhCWcZs35DV3k04sMEuTr7nPE8pMCUPQoozlpoHiYzlz1EOTqNWD8irFlhVX16tuSJn3WT7LMWgYDSqPUDRTiVVkvNhmNCCEjS7gFW3drg21IOWuW_cREJNLYtZ_czNZDk3Q"/>
+</div>
+<div>
+<p class="font-title-md text-title-md text-on-surface">Ксюша</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary" data-icon="menu_book">menu_book</span>
+                читает историю в тихом зале (25 мин)
+              </p>
+</div>
+</div>
+<span class="w-2.5 h-2.5 rounded-full bg-primary/80" title="В потоке"></span>
+</div>
+<!-- Lo-Fi Room Entry Button -->
+<button class="w-full bg-secondary text-on-secondary hover:bg-secondary/90 font-title-md text-title-md py-2.5 px-4 rounded-full flex items-center justify-center gap-2 shadow-sm transition-all active:scale-[0.985]">
+<span class="material-symbols-outlined text-[19px]" data-icon="meeting_room">meeting_room</span>
+<span>Войти в лоу-фай коворкинг (без камер)</span>
+</button>
+<p class="font-label-sm text-label-sm text-outline text-center">
+          Звуки тихого дождя, шелест страниц и поддержка присутствия.
+        </p>
+</section>
+</main>
+<!-- BottomNavBar (from Shared Components JSON: docked, full-width, bottom-0, shadow-md, rounded-t-lg, active tab: Майя) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-space-xs py-space-xs bg-surface shadow-md rounded-t-lg">
+<!-- Tab 0: Сегодня -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-space-xs py-space-xs hover:bg-surface-container-low transition-colors duration-200 active:scale-[0.985]">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="text-label-sm font-label-sm mt-0.5">Сегодня</span>
+</button>
+<!-- Tab 1: Школа -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-space-xs py-space-xs hover:bg-surface-container-low transition-colors duration-200 active:scale-[0.985]">
+<span class="material-symbols-outlined" data-icon="school">school</span>
+<span class="text-label-sm font-label-sm mt-0.5">Школа</span>
+</button>
+<!-- Tab 2: ЕГЭ -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-space-xs py-space-xs hover:bg-surface-container-low transition-colors duration-200 active:scale-[0.985]">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+<span class="text-label-sm font-label-sm mt-0.5">ЕГЭ</span>
+</button>
+<!-- Tab 3: Привычки -->
+<button class="flex flex-col items-center justify-center text-on-surface-variant px-space-xs py-space-xs hover:bg-surface-container-low transition-colors duration-200 active:scale-[0.985]">
+<span class="material-symbols-outlined" data-icon="spa">spa</span>
+<span class="text-label-sm font-label-sm mt-0.5">Привычки</span>
+</button>
+<!-- Tab 4: Майя (Active Destination strictly aligned with Contextual Intent) -->
+<button aria-current="page" class="flex flex-col items-center justify-center bg-primary-fixed text-on-primary-fixed rounded-full px-space-md py-space-xs font-label-sm text-label-sm transition-all duration-200 active:scale-[0.985]">
+<span class="material-symbols-outlined" data-icon="support_agent" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+<span class="text-label-sm font-label-sm mt-0.5 font-bold">Майя</span>
+</button>
+</nav>
+</div>
+</body></html>

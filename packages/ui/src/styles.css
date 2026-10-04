@@ -1,0 +1,40 @@
+@import "./tokens.css";
+
+@layer base {
+  html, body {
+    background: var(--background);
+    color: var(--on-surface);
+    font-family: var(--font-family);
+    font-size: var(--text-body-md-size);
+    line-height: var(--text-body-md-lh);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+  a { color: inherit; text-decoration: none; }
+  img, svg { display: block; max-width: 100%; }
+
+  /* Tactile pressed state */
+  .vp-press:active:not(:disabled) { transform: scale(0.985); transition: transform 120ms ease-out; }
+
+  /* Focus ring */
+  :focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+    border-radius: var(--radius-sm);
+  }
+
+  /* Scrollbar (soft) */
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--outline-variant); border-radius: var(--radius-full); border: 2px solid var(--surface); }
+  ::-webkit-scrollbar-thumb:hover { background: var(--outline); }
+}
+
+/* Material Symbols sizing helper (CDN-loaded) */
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  user-select: none;
+}

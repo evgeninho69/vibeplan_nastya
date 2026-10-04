@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Coffee, Vanilla &amp; Matcha — Привычки &amp; Жизнь</title>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Plus Jakarta Sans Font -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-secondary": "#ffffff",
+            "surface": "#fcf9f4",
+            "on-error-container": "#93000a",
+            "tertiary-fixed": "#f7ddcf",
+            "outline": "#737970",
+            "error-container": "#ffdad6",
+            "on-primary-fixed-variant": "#314d30",
+            "surface-variant": "#e5e2dd",
+            "surface-container-low": "#f6f3ee",
+            "on-error": "#ffffff",
+            "error": "#ba1a1a",
+            "secondary-fixed-dim": "#ccc0ee",
+            "primary-fixed-dim": "#aecfa9",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed": "#1e1539",
+            "on-tertiary-container": "#f6dcce",
+            "on-primary-container": "#c8eac2",
+            "inverse-on-surface": "#f3f0eb",
+            "surface-bright": "#fcf9f4",
+            "inverse-surface": "#31302d",
+            "primary-fixed": "#c9ecc4",
+            "secondary-container": "#ddd0ff",
+            "on-tertiary-fixed": "#261910",
+            "inverse-primary": "#aecfa9",
+            "on-surface": "#1c1c19",
+            "tertiary": "#5a483e",
+            "on-primary": "#ffffff",
+            "on-surface-variant": "#434841",
+            "on-tertiary-fixed-variant": "#544339",
+            "background": "#fcf9f4",
+            "tertiary-fixed-dim": "#dac2b4",
+            "primary": "#365335",
+            "surface-tint": "#486646",
+            "on-background": "#1c1c19",
+            "surface-container": "#f0ede9",
+            "secondary-fixed": "#e8ddff",
+            "primary-container": "#4d6b4b",
+            "surface-dim": "#dcdad5",
+            "surface-container-highest": "#e5e2dd",
+            "on-secondary-fixed-variant": "#4a4167",
+            "surface-container-high": "#ebe8e3",
+            "on-primary-fixed": "#052108",
+            "tertiary-container": "#736054",
+            "outline-variant": "#c3c8be",
+            "surface-container-lowest": "#ffffff",
+            "secondary": "#625980",
+            "on-secondary-container": "#61577f"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin": "1rem",
+            "margin-md": "2rem",
+            "space-sm": "0.5rem",
+            "gutter": "1rem",
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "gutter-md": "1.5rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.25rem"
+          },
+          "fontFamily": {
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "title-lg": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600" }],
+            "title-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "headline-xl-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 5px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #c3c8be;
+      border-radius: 9999px;
+    }
+    .paper-shadow {
+      box-shadow: 0 4px 16px -2px rgba(61, 50, 42, 0.04), 0 1px 3px 0 rgba(61, 50, 42, 0.02);
+    }
+    .paper-elevated {
+      box-shadow: 0 12px 32px -4px rgba(61, 50, 42, 0.08), 0 4px 10px -2px rgba(61, 50, 42, 0.03);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased font-body-md text-body-md min-h-screen flex selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- ================= SIDE NAVIGATION RAIL ================= -->
+<!-- Shared Component: SideNavBar -->
+<aside class="fixed top-0 left-0 h-full w-64 p-space-md z-40 bg-surface-container-low flex flex-col justify-between shrink-0 border-r border-outline-variant/30 shadow-sm">
+<!-- Top Branding & CTA -->
+<div class="flex flex-col gap-space-md">
+<!-- Brand Header -->
+<div class="flex items-center gap-3 px-2 py-1">
+<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary shadow-xs">
+<span class="material-symbols-outlined text-[22px]" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<div class="flex flex-col overflow-hidden">
+<span class="font-title-lg text-title-lg font-bold text-primary tracking-tight truncate">Coffee, Vanilla &amp; Matcha</span>
+<span class="font-label-sm text-label-sm text-outline truncate">ЕГЭ Сафари • Спокойный фокус</span>
+</div>
+</div>
+<!-- Quick Session CTA -->
+<button class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-primary text-surface font-title-md text-title-md hover:bg-[#3F583D] active:scale-[0.985] transition-all shadow-sm">
+<span class="material-symbols-outlined text-lg">add</span>
+<span>Добавить сессию</span>
+</button>
+<!-- Main Navigation Links -->
+<nav class="flex flex-col gap-1.5 mt-2">
+<!-- Tab 0: Сегодня -->
+<a class="flex items-center justify-between px-4 py-2.5 rounded-full text-on-surface-variant hover:bg-surface-container-high font-body-md transition-all" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-xl">calendar_today</span>
+<span>Сегодня</span>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded-full text-on-surface-variant">Пн-Вс</span>
+</a>
+<!-- Tab 1: Школа -->
+<a class="flex items-center justify-between px-4 py-2.5 rounded-full text-on-surface-variant hover:bg-surface-container-high font-body-md transition-all" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-xl">school</span>
+<span>Школа</span>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container px-2 py-0.5 rounded-full text-outline">6 ур.</span>
+</a>
+<!-- Tab 2: ЕГЭ & Учеба -->
+<a class="flex items-center justify-between px-4 py-2.5 rounded-full text-on-surface-variant hover:bg-surface-container-high font-body-md transition-all" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-xl">menu_book</span>
+<span>ЕГЭ &amp; Учеба</span>
+</div>
+<span class="font-label-sm text-label-sm bg-surface-container-high text-primary px-2 py-0.5 rounded-full font-medium">68%</span>
+</a>
+<!-- Tab 3: Привычки & Жизнь (ACTIVE TAB MATCHING CONTEXT) -->
+<a class="flex items-center justify-between px-4 py-2.5 rounded-full bg-primary-container text-on-primary-fixed font-title-md transition-all shadow-xs" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">spa</span>
+<span class="text-on-primary-fixed">Привычки &amp; Жизнь</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-primary-fixed animate-pulse"></span>
+</a>
+<!-- Tab 4: Комьюнити & Друзья -->
+<a class="flex items-center justify-between px-4 py-2.5 rounded-full text-on-surface-variant hover:bg-surface-container-high font-body-md transition-all" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-xl">group</span>
+<span>Комьюнити &amp; Друзья</span>
+</div>
+<span class="w-2 h-2 rounded-full bg-secondary-fixed"></span>
+</a>
+<!-- Tab 5: Профиль & ИИ -->
+<a class="flex items-center justify-between px-4 py-2.5 rounded-full text-on-surface-variant hover:bg-surface-container-high font-body-md transition-all" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-xl">smart_toy</span>
+<span>Профиль &amp; ИИ</span>
+</div>
+</a>
+</nav>
+</div>
+<!-- Bottom Rail: AI Companion Card & System Navigation -->
+<div class="flex flex-col gap-3">
+<!-- AI Companion Widget: Майя -->
+<div class="p-3.5 bg-surface-container-lowest rounded-2xl border border-outline-variant/30 paper-shadow flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-title-md text-title-md text-primary">Майя • ИИ тьютор</span>
+</div>
+<span class="font-label-sm text-label-sm text-outline">онлайн</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+          «На связи: Завари ромашковый чай или матча-латте перед чтением 🍵»
+        </p>
+</div>
+<!-- Settings & Support -->
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20 px-1">
+<a class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary font-body-sm text-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">settings</span>
+<span>Настройки</span>
+</a>
+<a class="flex items-center gap-1.5 text-on-surface-variant hover:text-primary font-body-sm text-body-sm transition-colors" href="#">
+<span class="material-symbols-outlined text-lg">favorite</span>
+<span>Помощь</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- ================= MAIN CONTENT CANVAS ================= -->
+<div class="flex-1 ml-64 flex flex-col min-w-0 bg-background">
+<!-- Top Persistent Header (Shared Component: TopNavBar) -->
+<header class="sticky top-0 z-30 flex items-center justify-between px-space-xl py-space-sm w-full bg-surface/80 backdrop-blur-md border-b border-outline-variant/20 shadow-sm">
+<!-- Left: Ambient Life Indicators -->
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 text-on-surface font-title-md text-title-md">
+<span class="material-symbols-outlined text-primary text-xl">event_upcoming</span>
+<span>Четверг, 24 октября</span>
+<span class="mx-1 text-outline-variant">•</span>
+<span class="bg-primary-fixed/40 text-primary px-2.5 py-0.5 rounded-full font-label-md text-label-md">Баланс жизни: 8.8/10</span>
+</div>
+<!-- Micro status pills -->
+<div class="hidden xl:flex items-center gap-3">
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-body-sm font-body-sm text-on-surface-variant border border-outline-variant/20">
+<span class="material-symbols-outlined text-sm text-primary">water_drop</span>
+<span>Вода: <strong class="text-on-surface">1.8</strong> / 2.2 л</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-body-sm font-body-sm text-on-surface-variant border border-outline-variant/20">
+<span class="material-symbols-outlined text-sm text-secondary">menu_book</span>
+<span>Чтение: <strong class="text-on-surface">35 мин</strong> сегодня</span>
+</div>
+<div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-surface-container text-body-sm font-body-sm text-on-surface-variant border border-outline-variant/20">
+<span class="material-symbols-outlined text-sm text-tertiary">kayaking</span>
+<span>Тренировка: в <strong class="text-on-surface">19:30</strong></span>
+</div>
+</div>
+</div>
+<!-- Right: Action Cluster & Profile -->
+<div class="flex items-center gap-3">
+<!-- Cozy Lofi Player Mini-card -->
+<div class="hidden lg:flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-high/60 border border-outline-variant/30 text-on-surface">
+<span class="material-symbols-outlined text-primary text-lg animate-spin" style="animation-duration: 9s;">radio_button_checked</span>
+<span class="font-body-sm text-body-sm">Фокус-радио: <em>Cozy Lofi &amp; Rain</em></span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-colors text-base ml-1">volume_up</span>
+</div>
+<!-- Voice Note to Maya CTA -->
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container border border-outline-variant/40 hover:bg-surface-container-high text-on-surface font-title-md text-title-md active:scale-95 transition-all">
+<span class="material-symbols-outlined text-primary text-lg">mic</span>
+<span>Голосовая заметка Майе</span>
+</button>
+<!-- Notification Bell -->
+<button class="w-10 h-10 rounded-full hover:bg-surface-container flex items-center justify-center text-on-surface-variant transition-colors relative">
+<span class="material-symbols-outlined text-xl">notifications</span>
+<span class="w-2 h-2 rounded-full bg-primary absolute top-2 right-2"></span>
+</button>
+<!-- Student Profile Avatar & Name -->
+<div class="flex items-center gap-2.5 pl-2 border-l border-outline-variant/30">
+<div class="w-9 h-9 rounded-full overflow-hidden ring-2 ring-primary-fixed bg-surface-container-highest flex items-center justify-center text-primary font-title-md">
+<span>АЛ</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface leading-tight">Аня Ларионова</span>
+<span class="font-label-sm text-label-sm text-outline">11 «А» класс</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Scrollable Main Workspace -->
+<main class="p-space-xl flex flex-col gap-space-lg max-w-[1440px] w-full mx-auto">
+<!-- ================= 1. PAGE HERO & AMBIENT HEADER ================= -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-2">
+<div class="flex flex-col gap-1.5 max-w-2xl">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md px-3 py-1 rounded-full bg-primary-fixed/50 text-on-primary-fixed inline-flex items-center gap-1 font-semibold">
+<span class="material-symbols-outlined text-sm">nature</span>
+              Личное пространство заботы
+            </span>
+<span class="font-label-md text-label-md px-2.5 py-1 rounded-full bg-secondary-fixed/50 text-on-secondary-fixed">
+              Анти-выгорание
+            </span>
+</div>
+<h1 class="font-headline-xl text-headline-xl font-bold tracking-tight text-on-surface">Привычки &amp; Жизнь 🌿</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            Пространство для восстановления сил, вдохновения и бережной заботы о себе вне рамок школьных тестов и дедлайнов.
+          </p>
+</div>
+<!-- Gentle Energy Balance Widget -->
+<div class="p-4 rounded-3xl bg-surface-container-lowest border border-outline-variant/30 paper-shadow flex items-center gap-4 min-w-[340px]">
+<div class="w-12 h-12 rounded-2xl bg-[#EFE8DC] flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-2xl">wb_twilight</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Энергия дня</span>
+<span class="font-title-md text-title-md text-on-surface">Мягкое наполнение</span>
+<span class="font-body-sm text-body-sm text-primary font-medium">3 из 4 привычек закрыты без спешки</span>
+</div>
+</div>
+</section>
+<!-- Category Filter Tabs -->
+<div class="flex items-center gap-2 border-b border-outline-variant/20 pb-3">
+<button class="px-5 py-2 rounded-full bg-primary text-surface font-title-md text-title-md shadow-xs transition-all">
+          Все сферы
+        </button>
+<button class="px-5 py-2 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-title-md text-title-md transition-all">
+          Забота о теле и ум
+        </button>
+<button class="px-5 py-2 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-title-md text-title-md transition-all">
+          Книжный клуб
+        </button>
+<button class="px-5 py-2 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface-variant font-title-md text-title-md transition-all">
+          Проект Jazz (Бренд &amp; DIY)
+        </button>
+</div>
+<!-- ================= 2. MAIN 3-COLUMN WORKSPACE GRID ================= -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- ================= COLUMN 1: DAILY HABITS (4 cols) ================= -->
+<section class="lg:col-span-4 flex flex-col gap-4">
+<!-- Card Container styled like heavy kraft paper notepad -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 border border-outline-variant/30 paper-shadow flex flex-col gap-5 relative overflow-hidden">
+<!-- Washi tape decoration at top right -->
+<div class="absolute -top-3 right-8 w-24 h-7 bg-[#EAE5F5]/80 rotate-2 rounded-sm shadow-xs pointer-events-none border-t border-b border-outline-variant/20"></div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl">checklist</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Ежедневный ритм</h2>
+</div>
+<span class="font-label-md text-label-md px-2.5 py-1 rounded-full bg-[#D8E6D7] text-primary font-semibold">24 окт</span>
+</div>
+<!-- Soft Streak Banner without toxic counters -->
+<div class="p-3.5 rounded-2xl bg-[#F4EFE6] border border-outline-variant/30 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-base">eco</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">14 дней мягкой заботы</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Режим без штрафов за пропуск и спешки</span>
+</div>
+</div>
+<!-- Interactive Habit Items List -->
+<div class="flex flex-col gap-3">
+<!-- Habit 1: Completed -->
+<div class="group flex items-start gap-3.5 p-3 rounded-2xl bg-surface-container-low/70 border border-outline-variant/20 transition-all hover:bg-surface-container">
+<button class="w-[22px] h-[22px] mt-0.5 rounded-[6px] bg-primary flex items-center justify-center text-white shrink-0 shadow-xs">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</button>
+<div class="flex flex-col flex-1">
+<span class="line-through text-on-surface/60 font-body-md text-body-md">Стакан теплой воды с лимоном утром</span>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-sm text-label-sm text-outline">Выполнено в 07:15</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-primary">Матча-рутина</span>
+</div>
+</div>
+</div>
+<!-- Habit 2: Completed -->
+<div class="group flex items-start gap-3.5 p-3 rounded-2xl bg-surface-container-low/70 border border-outline-variant/20 transition-all hover:bg-surface-container">
+<button class="w-[22px] h-[22px] mt-0.5 rounded-[6px] bg-primary flex items-center justify-center text-white shrink-0 shadow-xs">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</button>
+<div class="flex flex-col flex-1">
+<span class="line-through text-on-surface/60 font-body-md text-body-md">Мягкая растяжка / утренняя медитация 10 мин</span>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-sm text-label-sm text-outline">Выполнено в 07:30</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-secondary">Дзен</span>
+</div>
+</div>
+</div>
+<!-- Habit 3: Completed -->
+<div class="group flex items-start gap-3.5 p-3 rounded-2xl bg-surface-container-low/70 border border-outline-variant/20 transition-all hover:bg-surface-container">
+<button class="w-[22px] h-[22px] mt-0.5 rounded-[6px] bg-primary flex items-center justify-center text-white shrink-0 shadow-xs">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</button>
+<div class="flex flex-col flex-1">
+<span class="line-through text-on-surface/60 font-body-md text-body-md">Дневная прогулка на свежем воздухе без телефона</span>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-sm text-label-sm text-outline">35 мин в парке Горького</span>
+</div>
+</div>
+</div>
+<!-- Habit 4: Interactive Water Glass Tracker -->
+<div class="p-3.5 rounded-2xl bg-[#FFFFFF] border border-outline-variant/30 paper-shadow flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl">local_drink</span>
+<span class="font-title-md text-title-md text-on-surface">Норма чистой воды</span>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant font-medium">4 из 5 стаканов (1.8 л)</span>
+</div>
+<!-- Interactive Glasses -->
+<div class="flex items-center justify-between gap-2 pt-1">
+<!-- Glass 1: Full -->
+<div class="flex-1 h-10 rounded-xl bg-[#D8E6D7] border border-[#7A9A78]/30 flex items-center justify-center text-primary transition-transform hover:scale-105" title="0.4 л выпито">
+<span class="material-symbols-outlined text-base">check</span>
+</div>
+<!-- Glass 2: Full -->
+<div class="flex-1 h-10 rounded-xl bg-[#D8E6D7] border border-[#7A9A78]/30 flex items-center justify-center text-primary transition-transform hover:scale-105" title="0.8 л выпито">
+<span class="material-symbols-outlined text-base">check</span>
+</div>
+<!-- Glass 3: Full -->
+<div class="flex-1 h-10 rounded-xl bg-[#D8E6D7] border border-[#7A9A78]/30 flex items-center justify-center text-primary transition-transform hover:scale-105" title="1.2 л выпито">
+<span class="material-symbols-outlined text-base">check</span>
+</div>
+<!-- Glass 4: Full -->
+<div class="flex-1 h-10 rounded-xl bg-[#D8E6D7] border border-[#7A9A78]/30 flex items-center justify-center text-primary transition-transform hover:scale-105" title="1.6 л выпито">
+<span class="material-symbols-outlined text-base">check</span>
+</div>
+<!-- Glass 5: Pending (+ Action) -->
+<button class="flex-1 h-10 rounded-xl bg-surface-container-low hover:bg-[#EFE8DC] border border-dashed border-outline-variant flex items-center justify-center text-outline hover:text-primary transition-all group" title="Выпить стакан воды">
+<span class="material-symbols-outlined text-base group-hover:scale-110 transition-transform">add</span>
+</button>
+</div>
+<div class="flex items-center justify-between text-label-sm font-label-sm text-outline">
+<span>Утренний баланс</span>
+<button class="text-primary hover:underline">+ Добавить глоток</button>
+</div>
+</div>
+<!-- Habit 5: Planned Evening -->
+<div class="group flex items-start gap-3.5 p-3 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 hover:border-primary/40 transition-all">
+<div class="w-[22px] h-[22px] mt-0.5 rounded-[6px] bg-[#EFE8DC] border border-outline-variant/60 flex items-center justify-center text-transparent group-hover:border-primary">
+<span class="material-symbols-outlined text-xs">check</span>
+</div>
+<div class="flex flex-col flex-1">
+<span class="font-body-md text-body-md text-on-surface font-medium">Вечерний диджитал-детокс за 40 мин до сна</span>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-sm text-label-sm text-secondary font-medium">Запланировано на 22:30</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-outline">Напоминание Майи</span>
+</div>
+</div>
+</div>
+<!-- Habit 6: Evening Gratitude -->
+<div class="group flex items-start gap-3.5 p-3 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 hover:border-primary/40 transition-all">
+<div class="w-[22px] h-[22px] mt-0.5 rounded-[6px] bg-[#EFE8DC] border border-outline-variant/60 flex items-center justify-center text-transparent group-hover:border-primary">
+<span class="material-symbols-outlined text-xs">check</span>
+</div>
+<div class="flex flex-col flex-1">
+<span class="font-body-md text-body-md text-on-surface font-medium">Дневник благодарности: 3 теплых момента дня</span>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="font-label-sm text-label-sm text-tertiary font-medium">Ожидает заполнения перед сном</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Add custom habit input trigger -->
+<button class="w-full py-2.5 rounded-full border border-dashed border-outline-variant hover:border-primary text-on-surface-variant hover:text-primary font-body-md text-body-md flex items-center justify-center gap-2 transition-colors">
+<span class="material-symbols-outlined text-lg">add_circle</span>
+<span>Добавить личный ритуал</span>
+</button>
+</div>
+</section>
+<!-- ================= COLUMN 2: MINDFUL READING DIARY (4 cols) ================= -->
+<section class="lg:col-span-4 flex flex-col gap-4">
+<div class="bg-surface-container-lowest rounded-3xl p-6 border border-outline-variant/30 paper-shadow flex flex-col gap-5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-2xl">auto_stories</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Дневник чтения</h2>
+</div>
+<span class="font-label-sm text-label-sm px-3 py-1 rounded-full bg-[#EAE5F5] text-secondary font-medium">Сезон уюта</span>
+</div>
+<!-- Current Book Card with Cover & Realistic Progress -->
+<div class="p-4 rounded-2xl bg-[#FAF7F2] border border-outline-variant/30 flex gap-4 items-start">
+<!-- Book Spine/Cover Simulation -->
+<div class="w-20 h-28 rounded-lg bg-surface-container-highest flex-shrink-0 overflow-hidden shadow-md flex flex-col justify-between p-2 relative border-l-4 border-secondary">
+<span class="font-label-sm text-[9px] uppercase tracking-widest text-outline leading-tight">Янагихара</span>
+<span class="font-title-md text-[11px] font-bold text-on-surface leading-tight">Маленькая жизнь</span>
+<span class="material-symbols-outlined text-secondary text-sm self-end">bookmark</span>
+</div>
+<!-- Book Meta & Reading Pace -->
+<div class="flex flex-col flex-1 gap-2">
+<div>
+<h3 class="font-title-lg text-title-lg font-bold text-on-surface leading-snug">Маленькая жизнь</h3>
+<span class="font-body-sm text-body-sm text-outline">Ханья Янагихара</span>
+</div>
+<!-- Progress Pill Bar -->
+<div class="flex flex-col gap-1.5 mt-1">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface font-semibold">340 <span class="text-outline font-normal">/ 700 стр.</span></span>
+<span class="font-label-md text-label-md text-primary font-semibold">48% прочитано</span>
+</div>
+<div class="w-full h-2.5 rounded-full bg-[#EAE5F5] overflow-hidden">
+<div class="h-full bg-gradient-to-r from-[#7A9A78] to-[#4D6B4B] rounded-full" style="width: 48%;"></div>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-label-sm font-label-sm text-on-surface-variant mt-0.5">
+<span class="material-symbols-outlined text-sm text-primary">speed</span>
+<span>~25 стр. в день • финиш к 5 ноября</span>
+</div>
+</div>
+</div>
+<!-- AI Voice Review Functionality (Standout Feature) -->
+<div class="p-4 rounded-2xl bg-[#EAE5F5]/40 border border-secondary/20 flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-secondary flex items-center gap-1.5">
+<span class="material-symbols-outlined text-lg">mic</span>
+                  Голосовая рецензия ИИ
+                </span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-semibold">Майя Аудио</span>
+</div>
+<!-- Big Voice Capture Button -->
+<button class="w-full py-3 px-4 rounded-2xl bg-secondary text-on-secondary flex items-center justify-center gap-2 font-title-md text-title-md hover:bg-[#52496D] active:scale-[0.985] transition-all shadow-xs">
+<span class="material-symbols-outlined text-xl">record_voice_over</span>
+<span>Надиктовать впечатления о главе</span>
+</button>
+<!-- Recent AI Synthesis Insight -->
+<div class="p-3 bg-surface-container-lowest rounded-xl border border-outline-variant/30 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-outline">ИИ-выжимка из вчерашней аудиозаметки</span>
+<span class="font-label-sm text-label-sm text-primary font-bold">Оценка: 9.4/10</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed italic">
+                  «Цитата и инсайт: Архитектурные метафоры дружбы и исцеления детских травм в Нью-Йорке. Очень трогательный диалог Виллема и Джуда в библиотеке...»
+                </p>
+<div class="flex items-center gap-2 pt-1">
+<span class="px-2 py-0.5 rounded-full bg-[#EAE5F5] text-secondary font-label-sm text-label-sm">#глубина</span>
+<span class="px-2 py-0.5 rounded-full bg-[#D8E6D7] text-primary font-label-sm text-label-sm">#эмпатия</span>
+<span class="px-2 py-0.5 rounded-full bg-[#EFE8DC] text-tertiary font-label-sm text-label-sm">#эстетика</span>
+</div>
+</div>
+</div>
+<!-- "Хочу прочесть в уютные выходные" -->
+<div class="flex flex-col gap-2.5 pt-1">
+<div class="flex items-center justify-between">
+<span class="font-title-md text-title-md text-on-surface">Хочу прочесть в выходные</span>
+<button class="font-label-sm text-label-sm text-primary hover:underline flex items-center gap-0.5">
+<span class="material-symbols-outlined text-sm">add</span>
+<span>Добавить книгу</span>
+</button>
+</div>
+<!-- Wishlist Item 1 -->
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-8 h-10 rounded bg-[#FAF7F2] border border-outline-variant/30 flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-sm">book</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Клара и Солнце</span>
+<span class="font-label-sm text-label-sm text-outline">Кадзуо Исигуро</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant">В очереди</span>
+</div>
+<!-- Wishlist Item 2 -->
+<div class="flex items-center justify-between p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-3">
+<div class="w-8 h-10 rounded bg-[#FAF7F2] border border-outline-variant/30 flex items-center justify-center text-outline">
+<span class="material-symbols-outlined text-sm">book</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-semibold text-on-surface">Выгон</span>
+<span class="font-label-sm text-label-sm text-outline">Эми Липтрот</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant">На полке</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ================= COLUMN 3: SPORT & CREATIVE PROJECT JAZZ (4 cols) ================= -->
+<section class="lg:col-span-4 flex flex-col gap-4">
+<!-- Block 1: Sport & Rowing -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 border border-outline-variant/30 paper-shadow flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-2xl">fitness_center</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Спорт и движение</h2>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-semibold">19:30</span>
+</div>
+<!-- Today's Session Card -->
+<div class="p-4 rounded-2xl bg-[#F6F3EE] border border-outline-variant/30 flex flex-col gap-3">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-2xl bg-tertiary text-surface flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-xl">kayaking</span>
+</div>
+<div class="flex flex-col">
+<h3 class="font-title-md text-title-md text-on-surface leading-tight">Гребной клуб «Буревестник»</h3>
+<span class="font-body-sm text-body-sm text-outline">Вода / эргометр Concept2 • 1 ч 15 мин</span>
+</div>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant bg-surface-container-lowest/80 p-2.5 rounded-xl border border-outline-variant/20">
+                «Разгрузка плечевого пояса и спины после уроков физики. Тренер: Алексей Смирнов.»
+              </p>
+<button class="w-full py-2.5 rounded-xl bg-tertiary text-surface font-title-md text-title-md hover:bg-[#483931] active:scale-[0.985] transition-all flex items-center justify-center gap-2 shadow-xs">
+<span class="material-symbols-outlined text-lg">backpack</span>
+<span>Готова • Собрать спортивную сумку</span>
+</button>
+</div>
+<!-- Weekly Summary Indicators -->
+<div class="grid grid-cols-2 gap-3 pt-1">
+<div class="p-3 rounded-2xl bg-surface-container-low border border-outline-variant/20 flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline">На этой неделе</span>
+<span class="font-title-md text-title-md text-on-surface">3 тренировки</span>
+<span class="font-body-sm text-[11px] text-primary">2 гребля + 1 бег 4.2 км</span>
+</div>
+<div class="p-3 rounded-2xl bg-surface-container-low border border-outline-variant/20 flex flex-col gap-1">
+<span class="font-label-sm text-label-sm text-outline">Пульс в покое</span>
+<div class="flex items-center gap-1">
+<span class="font-title-md text-title-md text-on-surface">62</span>
+<span class="font-label-sm text-label-sm text-outline">уд/мин</span>
+</div>
+<span class="font-body-sm text-[11px] text-primary">Спокойный ритм сердца</span>
+</div>
+</div>
+</div>
+<!-- Block 2: DIY & 3D Fashion Brand "Project Jazz" -->
+<div class="bg-surface-container-lowest rounded-3xl p-6 border border-outline-variant/30 paper-shadow flex flex-col gap-4 relative">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl">architecture</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Проект Jazz 🧵🖨️</h2>
+</div>
+<span class="font-label-sm text-label-sm px-2.5 py-0.5 rounded-full bg-primary-fixed text-primary font-bold">Дроп #03</span>
+</div>
+<!-- Project Details Card -->
+<div class="p-4 rounded-2xl bg-[#FAF7F2] border border-outline-variant/30 flex flex-col gap-3">
+<div>
+<span class="font-label-sm text-label-sm text-primary uppercase tracking-wider font-semibold">Кастомная одежда</span>
+<h3 class="font-title-md text-title-md text-on-surface font-bold">Oversize оливковое худи из футера с органическими 3D-люверсами</h3>
+</div>
+<!-- Step-by-Step Workflow Tracking -->
+<div class="flex flex-col gap-2 pt-1">
+<!-- Step 1: Done -->
+<div class="flex items-center gap-2.5 text-body-sm font-body-sm">
+<span class="w-5 h-5 rounded-md bg-primary text-white flex items-center justify-center text-xs">
+<span class="material-symbols-outlined text-xs font-bold">check</span>
+</span>
+<span class="line-through text-on-surface/60">Раскрой плотного футера 480г</span>
+</div>
+<!-- Step 2: Done -->
+<div class="flex items-center gap-2.5 text-body-sm font-body-sm">
+<span class="w-5 h-5 rounded-md bg-primary text-white flex items-center justify-center text-xs">
+<span class="material-symbols-outlined text-xs font-bold">check</span>
+</span>
+<span class="line-through text-on-surface/60">3D-моделирование люверсов в Fusion360</span>
+</div>
+<!-- Step 3: In Progress (Highlight) -->
+<div class="flex flex-col gap-1 p-2 rounded-xl bg-[#D8E6D7]/40 border border-primary/20">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 font-title-md text-title-md text-primary">
+<span class="material-symbols-outlined text-base animate-pulse">print</span>
+<span>Печать на Anycubic Photon</span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-primary">70%</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Смола цвета матча-латте • осталось ~40 мин</span>
+<div class="w-full h-1.5 rounded-full bg-surface-container-high overflow-hidden mt-1">
+<div class="h-full bg-primary rounded-full" style="width: 70%;"></div>
+</div>
+</div>
+<!-- Step 4: Pending -->
+<div class="flex items-center gap-2.5 text-body-sm font-body-sm text-outline">
+<span class="w-5 h-5 rounded-md border border-outline-variant bg-surface flex items-center justify-center text-xs">4</span>
+<span>Сборка и примерка люверсов на шнуры (Пятница вечер)</span>
+</div>
+</div>
+<!-- Material Supply Note -->
+<div class="p-2.5 rounded-xl bg-surface-container-lowest border border-outline-variant/30 flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant">Остаток: 3.2м японского футера</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">Катушка смолы в пути</span>
+</div>
+<button class="w-full py-2 rounded-xl border border-outline-variant/60 hover:bg-surface-container text-on-surface font-title-md text-title-md transition-colors flex items-center justify-center gap-1.5">
+<span class="material-symbols-outlined text-base">palette</span>
+<span>+ Новая идея дропа</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- ================= 3. BOTTOM CARING BANNER FROM AI MAYA ================= -->
+<section class="mt-2 p-5 rounded-3xl bg-gradient-to-r from-[#F4EFE6] via-[#FAF7F2] to-[#EAE5F5] border border-outline-variant/30 paper-shadow flex flex-col md:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-title-md text-title-md font-bold text-on-surface">Забота от Майи</span>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-container text-on-primary-fixed">Мягкий фокус</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+              «Помни: твоя ценность не измеряется количеством закрытых задач. Проект Jazz и чтение — это твое пространство свободы. Отдыхай смело! ☕»
+            </p>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<button class="px-4 py-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-title-md transition-colors flex items-center gap-1.5">
+<span class="material-symbols-outlined text-base">self_improvement</span>
+<span>Пауза на дыхание 3 мин</span>
+</button>
+<button class="px-5 py-2 rounded-full bg-primary text-surface font-title-md text-title-md hover:bg-[#3F583D] transition-colors shadow-xs">
+            Спасибо, Майя
+          </button>
+</div>
+</section>
+</main>
+</div>
+<!-- Micro-interactions Script -->
+<script>
+    // Simple tactile feedback simulation on buttons & checkboxes
+    document.querySelectorAll('button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        this.classList.add('scale-95');
+        setTimeout(() => this.classList.remove('scale-95'), 120);
+      });
+    });
+  </script>
+</body></html>

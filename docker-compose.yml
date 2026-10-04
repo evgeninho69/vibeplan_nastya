@@ -1,0 +1,89 @@
+# Docker Compose для prod-стека ВайбПлана.
+# Запуск: `docker compose --env-file .env.production up -d --build`
+#
+# Перед запуском:
+#   cp .env.example .env.production
+#   заполнить OPENROUTER_API_KEY, RESEND_API_KEY, AUTH_SECRET (32+ байт), DATABASE_URL,
+#   REDIS_URL, TELEGRAM_BOT_TOKEN (опц.), ADMIN_USER_IDS
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      REDIS_URL: redis://redis:6379
+      AUTH_SECRET: ${AUTH_SECRET}
+      AUTH_URL: ${AUTH_URL:-http://localhost:3000}
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
+      EMAIL_FROM: ${EMAIL_FROM:-VibePlan <hello@vibeplan.app>}
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-}
+      TELEGRAM_WEBHOOK_URL: ${TELEGRAM_WEBHOOK_URL:-}
+      ADMIN_USER_IDS: ${ADMIN_USER_IDS:-}
+      VISION_MODEL: ${VISION_MODEL:-openai/gpt-4o-vision}
+      PRIMARY_MODEL: ${PRIMARY_MODEL:-anthropic/claude-3.5-sonnet}
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks: [vp]
+
+  bot:
+    build:
+      context: .
+      dockerfile: apps/bot/Dockerfile
+    restart: unless-stopped
+    environment:
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN:-}
+      WEB_INTERNAL_URL: http://web:3000
+      ADMIN_USER_IDS: ${ADMIN_USER_IDS:-}
+    depends_on:
+      - web
+    networks: [vp]
+    profiles: ["with-bot"]   # поднимать: docker compose --profile with-bot up
+
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    volumes:
+      - vp_pg_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: vibeplan
+      POSTGRES_USER: vibeplan
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-vibeplan}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vibeplan"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks: [vp]
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    volumes:
+      - vp_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks: [vp]
+    ports:
+      - "6379:6379"
+
+networks:
+  vp:
+    driver: bridge
+
+volumes:
+  vp_pg_data:
+  vp_redis_data:

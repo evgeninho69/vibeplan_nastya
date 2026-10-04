@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Coffee, Vanilla &amp; Matcha — Профиль &amp; Настройки ИИ-тьютора Майи</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with form plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Verbatim Tailwind Config from Style Guidance -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-low": "#f6f3ee",
+            "on-primary-container": "#c8eac2",
+            "secondary": "#625980",
+            "error": "#ba1a1a",
+            "surface-dim": "#dcdad5",
+            "secondary-fixed": "#e8ddff",
+            "on-secondary-fixed": "#1e1539",
+            "surface": "#fcf9f4",
+            "inverse-on-surface": "#f3f0eb",
+            "secondary-fixed-dim": "#ccc0ee",
+            "on-background": "#1c1c19",
+            "inverse-surface": "#31302d",
+            "on-primary-fixed": "#052108",
+            "on-tertiary-fixed-variant": "#544339",
+            "on-tertiary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "outline": "#737970",
+            "surface-container-high": "#ebe8e3",
+            "surface-bright": "#fcf9f4",
+            "background": "#fcf9f4",
+            "on-surface": "#1c1c19",
+            "surface-tint": "#486646",
+            "on-error": "#ffffff",
+            "primary": "#365335",
+            "tertiary-fixed": "#f7ddcf",
+            "on-secondary-container": "#61577f",
+            "primary-fixed-dim": "#aecfa9",
+            "primary-fixed": "#c9ecc4",
+            "on-primary-fixed-variant": "#314d30",
+            "on-surface-variant": "#434841",
+            "outline-variant": "#c3c8be",
+            "secondary-container": "#ddd0ff",
+            "surface-container-highest": "#e5e2dd",
+            "inverse-primary": "#aecfa9",
+            "on-tertiary-container": "#f6dcce",
+            "surface-container": "#f0ede9",
+            "surface-container-lowest": "#ffffff",
+            "on-primary": "#ffffff",
+            "surface-variant": "#e5e2dd",
+            "on-secondary-fixed-variant": "#4a4167",
+            "tertiary-container": "#736054",
+            "tertiary-fixed-dim": "#dac2b4",
+            "error-container": "#ffdad6",
+            "tertiary": "#5a483e",
+            "primary-container": "#4d6b4b",
+            "on-tertiary-fixed": "#261910",
+            "on-error-container": "#93000a"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1rem",
+            "space-xs": "0.25rem",
+            "gutter-md": "1.5rem",
+            "margin": "1rem",
+            "space-xl": "2.25rem",
+            "margin-md": "2rem",
+            "space-sm": "0.5rem",
+            "gutter": "1rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "title-lg": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "title-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "headline-xl-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }],
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #fcf9f4;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: #1c1c19;
+      -webkit-font-smoothing: antialiased;
+    }
+    .paper-shadow {
+      box-shadow: 0 4px 16px -2px rgba(61, 50, 42, 0.04), 0 1px 3px 0 rgba(61, 50, 42, 0.02);
+    }
+    .paper-border {
+      border: 1px solid rgba(61, 50, 42, 0.07);
+    }
+    .popover-shadow {
+      box-shadow: 0 12px 32px -4px rgba(61, 50, 42, 0.08), 0 4px 10px -2px rgba(61, 50, 42, 0.03);
+    }
+    .custom-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      background: #e5e2dd;
+      border-radius: 9999px;
+      height: 8px;
+      outline: none;
+    }
+    .custom-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #4d6b4b;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(54, 83, 53, 0.35);
+      border: 2px solid #ffffff;
+      transition: transform 0.15s ease;
+    }
+    .custom-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.15);
+    }
+    /* Hide scrollbars for serene look */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(115, 121, 112, 0.25);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(115, 121, 112, 0.4);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen flex selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- ========================================================================= -->
+<!-- SIDEBAR NAVIGATION RAIL (Desktop Rail from Shared Components JSON)        -->
+<!-- ========================================================================= -->
+<aside class="fixed top-0 left-0 h-screen w-64 p-space-md z-40 bg-surface-container-low border-r border-outline-variant/30 flex flex-col justify-between shrink-0 shadow-sm">
+<!-- Brand Crest & Header -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center gap-3 px-2 pt-1 pb-2">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary shrink-0 paper-border">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">local_cafe</span>
+</div>
+<div class="flex flex-col min-w-0">
+<span class="font-title-lg text-title-lg font-bold text-primary tracking-tight truncate">Coffee, Vanilla &amp; Matcha</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant truncate">ЕГЭ Сафари • Спокойный фокус</span>
+</div>
+</div>
+<!-- Quick Add Session CTA -->
+<button class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-full bg-primary-container text-on-primary font-title-md hover:bg-primary transition-all active:scale-[0.985] shadow-sm">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">add_circle</span>
+<span>Добавить сессию</span>
+</button>
+<!-- Main Navigation Rail Tabs (Semantic Shell Mandate: Active item is "Профиль & ИИ") -->
+<nav class="flex flex-col gap-1.5 mt-2">
+<!-- Tab 0: Сегодня -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-full text-on-surface-variant hover:bg-surface-container-high font-body-md transition-all active:scale-[0.985]" href="#today">
+<span class="material-symbols-outlined">calendar_today</span>
+<span>Сегодня</span>
+</a>
+<!-- Tab 1: Школа (6 ур.) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-full text-on-surface-variant hover:bg-surface-container-high font-body-md transition-all active:scale-[0.985]" href="#school">
+<span class="material-symbols-outlined">school</span>
+<span class="flex-1">Школа</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm">6 ур.</span>
+</a>
+<!-- Tab 2: ЕГЭ & Учеба (68%) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-full text-on-surface-variant hover:bg-surface-container-high font-body-md transition-all active:scale-[0.985]" href="#ege">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="flex-1">ЕГЭ &amp; Учеба</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed/60 text-on-primary-fixed-variant font-label-sm">68%</span>
+</a>
+<!-- Tab 3: Привычки & Жизнь -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-full text-on-surface-variant hover:bg-surface-container-high font-body-md transition-all active:scale-[0.985]" href="#habits">
+<span class="material-symbols-outlined">spa</span>
+<span>Привычки &amp; Жизнь</span>
+</a>
+<!-- Tab 4: Комьюнити & Друзья -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-full text-on-surface-variant hover:bg-surface-container-high font-body-md transition-all active:scale-[0.985]" href="#community">
+<span class="material-symbols-outlined">group</span>
+<span>Комьюнити &amp; Друзья</span>
+</a>
+<!-- Tab 5: Профиль & ИИ (CRITICAL ACTIVE STATE: style_active_navigation) -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-full bg-primary-container text-on-primary font-title-md transition-all shadow-sm" href="#profile">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+<span class="font-title-md">Профиль &amp; ИИ</span>
+<span class="w-2 h-2 rounded-full bg-primary-fixed ml-auto animate-pulse"></span>
+</a>
+</nav>
+</div>
+<!-- Sidebar Bottom / Footer: Settings, Help & Maya Status Card -->
+<div class="flex flex-col gap-2 pt-3 border-t border-outline-variant/30">
+<!-- AI Tutor Status Widget -->
+<div class="p-3 rounded-2xl bg-surface-container-lowest paper-border paper-shadow flex items-center gap-3 mb-1">
+<div class="relative shrink-0">
+<img class="w-10 h-10 rounded-full object-cover paper-border" data-alt="A delicate watercolor illustration of Maya the gentle AI academic tutor with hazel green eyes and neat brown hair tucked behind warm ears, wearing a soft moss-green cardigan against a warm cream paper background, emitting an empathetic and reassuring aura." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtLOx2_1Pv4Gd73PGwK_Pf7jeluMlClJJY9kKXnObvwzyrrIffrmoXcVuRA0TMusaKm5YHzM7iEbbTTjBfGpFqxijz6vl-3pjgETqjybbQ3ujRo9gqObeIC2v-GUSE8qts7I7gLHIpZ_uCa4LGIX9NorHIiAvbKfCb7mWslYP50dWNWBS74AbzCDT2isH3OUTd8fQlfaJ6uyY9O7q56drsmN0l2KKBo14UBlrtmhSZ1YBp3RmiUS5H0g"/>
+<span class="absolute bottom-0 right-0 w-3 h-3 rounded-full bg-primary ring-2 ring-surface-container-lowest"></span>
+</div>
+<div class="min-w-0 flex-1">
+<div class="flex items-center gap-1.5">
+<span class="font-title-md text-sm text-on-surface font-semibold truncate">Майя ИИ</span>
+<span class="font-label-sm text-[10px] px-1.5 py-0.2 rounded bg-primary-fixed/60 text-on-primary-fixed-variant">онлайн</span>
+</div>
+<span class="font-body-sm text-[11px] text-on-surface-variant block truncate">«Рядом и готова слушать»</span>
+</div>
+</div>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-full text-on-surface-variant hover:bg-surface-container-high font-body-md transition-all" href="#settings">
+<span class="material-symbols-outlined text-base">settings</span>
+<span>Настройки</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-2.5 rounded-full text-on-surface-variant hover:bg-surface-container-high font-body-md transition-all" href="#help">
+<span class="material-symbols-outlined text-base">favorite</span>
+<span>Помощь</span>
+</a>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- MAIN WORKSPACE CANVAS (Offset by sidebar width: 64 = 16rem)               -->
+<!-- ========================================================================= -->
+<div class="flex-1 ml-64 flex flex-col min-h-screen">
+<!-- Top Persistent Header (Aligned with Shared Components JSON) -->
+<header class="sticky top-0 z-30 flex items-center justify-between px-space-xl py-space-sm w-full bg-surface/80 backdrop-blur-md border-b border-outline-variant/20 shadow-sm">
+<!-- Breadcrumb & Day Vibe -->
+<div class="flex items-center gap-4">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-title-lg text-title-lg font-bold text-primary tracking-tight">Профиль &amp; Персонализация Майи</span>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed/50 text-on-primary-fixed-variant font-label-sm">Тьютор активен • Мягкий тон</span>
+</div>
+<p class="font-body-sm text-on-surface-variant mt-0.5">Четверг, 24 октября • Настройка темпа учебы и эмоционального компаса</p>
+</div>
+</div>
+<!-- Action Items & User Profile Pill -->
+<div class="flex items-center gap-3">
+<!-- Voice note trigger button -->
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-sm paper-border transition-all active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-primary text-base">mic</span>
+<span>Голосовая заметка Майе</span>
+</button>
+<!-- Notification Bell -->
+<button class="relative p-2 rounded-full hover:bg-surface-container text-on-surface-variant transition-colors" title="Уведомления">
+<span class="material-symbols-outlined text-xl">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-secondary"></span>
+</button>
+<!-- Vertical divider -->
+<div class="w-px h-6 bg-outline-variant/40"></div>
+<!-- Student Profile Pill -->
+<div class="flex items-center gap-3 pl-1 pr-3 py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container paper-border transition-all cursor-pointer">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A warm, dreamy watercolor avatar portrait of a Russian high school senior girl with softly tied chestnut hair, thoughtful dark eyes, and a relaxed cozy aesthetic, painted in pastel cream and sage tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5U6Nx8Zo2gtzEL9R2aJyv5d96WmKlCbVpYJ6iSFbVLHwlDH20F6XgF7fwCdOO9knbWk85bjrALiWZb_a4rqC0lxznzd7ekHZHtT-Rql_M95cf3r58xYUjAFm9kS47Exu5h7Ex_lUtbN5cu714T6R3hfTUHwIAb2oZQ89t2Guv4ZiWImotJctkmwCiViDtQpzqF_4l-9b7KSXFk2Tn4U_7U25wbEiyzwNAX2dAJ4LNtdxnWhRCulo7DQ"/>
+<div class="flex flex-col text-left">
+<span class="font-title-md text-xs font-semibold text-on-surface leading-tight">Аня Ларионова</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant leading-tight">11 «А» класс</span>
+</div>
+<span class="material-symbols-outlined text-sm text-on-surface-variant ml-1">expand_more</span>
+</div>
+</div>
+</header>
+<!-- Scrollable Canvas Workspace -->
+<main class="flex-1 px-space-xl py-space-lg max-w-[1240px] w-full mx-auto flex flex-col gap-space-lg">
+<!-- ===================================================================== -->
+<!-- SECTION 1: HEADER HERO / STUDENT PROFILE CARD                         -->
+<!-- ===================================================================== -->
+<section class="bg-surface-container-lowest rounded-3xl p-space-xl paper-border paper-shadow relative overflow-hidden">
+<!-- Subtle paper grain & warm ambient gradient accent -->
+<div class="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-primary-fixed/20 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-20 -left-12 w-56 h-56 rounded-full bg-secondary-fixed/25 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+<!-- Left: Avatar, Name, Bio, Tags -->
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+<div class="relative shrink-0">
+<img class="w-24 h-24 sm:w-28 sm:h-28 rounded-3xl object-cover paper-border shadow-sm" data-alt="Close-up watercolor portrait of high school student Anya in soft natural lighting, sitting near an open café window with books, styled with delicate brush textures in matcha greens, warm oats, and vanilla whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE8MEuzNSnT7_3Ll__yKQMysgjHdH85gMxGGV65dIs3BsPXTbKe7ZbPGE-lua_ObnhMyVYysd-jprU57R92gxcNl9NxU8ODlCtDB3GTr6sviw68qFO0-6Qc9gZVneyjdFJzCisCsbU8aD6H0lZaQHquNwucXZ4zQyZn4k2sCcb4iRpCgEZ8tOM0BHASI-jmMYpYoWkOlr4Qz90pKT79gp8wcLOho1ZDXJ1fdWv1XFCFrY7VRn5M1gGbw"/>
+<div class="absolute -bottom-2 -right-2 px-2.5 py-1 rounded-full bg-surface-container-lowest text-primary font-label-sm paper-border shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>11 «А»</span>
+</div>
+</div>
+<div class="flex flex-col">
+<div class="flex flex-wrap items-center gap-2 mb-1">
+<h1 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight">Аня Ларионова</h1>
+<span class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-md">Гум / Инфо-профиль</span>
+</div>
+<p class="font-title-md text-primary font-semibold flex items-center gap-1.5 mb-2">
+<span class="material-symbols-outlined text-base">flag</span>
+<span>Цель: 85+ баллов (ВШЭ / МГУ)</span>
+</p>
+<p class="font-body-md text-on-surface-variant max-w-xl text-sm leading-relaxed">
+                Готовлюсь к ЕГЭ по профильной математике, русскому и инфе. Люблю греблю, пью матчу в «Слое», шью дроп <span class="text-on-surface font-medium">Jazz</span> с 3D-люверсами из фотополимера.
+              </p>
+</div>
+</div>
+<!-- Right: Anti-Burnout Vital Cards -->
+<div class="flex flex-wrap sm:flex-nowrap lg:flex-col gap-3 min-w-[240px]">
+<!-- Mode badge -->
+<div class="flex items-center gap-3 p-3 rounded-2xl bg-surface-container-low paper-border">
+<div class="w-9 h-9 rounded-xl bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">spa</span>
+</div>
+<div>
+<span class="font-label-sm text-[11px] text-on-surface-variant block">Режим обучения</span>
+<span class="font-title-md text-xs font-bold text-primary">Анти-выгорание: Включен 🌿</span>
+</div>
+</div>
+<!-- Energy & Streak in grid -->
+<div class="grid grid-cols-2 gap-2.5 w-full">
+<div class="p-3 rounded-2xl bg-surface-container-low paper-border flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-[11px] text-on-surface-variant">Энергия</span>
+<span class="material-symbols-outlined text-sm text-primary">battery_charging_80</span>
+</div>
+<span class="font-headline-md text-lg font-bold text-on-surface">8.5 <span class="font-body-sm text-xs font-normal text-on-surface-variant">/ 10</span></span>
+</div>
+<div class="p-3 rounded-2xl bg-surface-container-low paper-border flex flex-col justify-between">
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-[11px] text-on-surface-variant">Стрик заботы</span>
+<span class="material-symbols-outlined text-sm text-secondary">favorite</span>
+</div>
+<span class="font-headline-md text-lg font-bold text-secondary">14 <span class="font-body-sm text-xs font-normal text-on-surface-variant">дней</span></span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ===================================================================== -->
+<!-- SECTION 2: MAYA AI TUTOR PERSONALIZATION & SOULMATE ENGINE             -->
+<!-- ===================================================================== -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left 7 Cols: Tone, Voice & Soft Deadlines Slider -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-3xl p-space-xl paper-border paper-shadow flex flex-col gap-6">
+<div class="flex items-start justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-2xl bg-primary-fixed/50 flex items-center justify-center text-primary shrink-0 paper-border">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">psychology</span>
+</div>
+<div>
+<h2 class="font-title-lg text-title-lg font-bold text-on-surface">Характер и тон общения Майи</h2>
+<p class="font-body-sm text-on-surface-variant">Выбери, как тьютор строит диалог и напоминает об учебе</p>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-primary-container text-on-primary font-label-sm shrink-0">ИИ v4.2 Соулмейт</span>
+</div>
+<!-- Voice & Tone Selector Radio-style Cards -->
+<div class="flex flex-col gap-3">
+<!-- Option 1: Бережная подруга (Active Selected) -->
+<div class="p-4 rounded-2xl border-2 border-primary bg-primary-fixed/15 paper-shadow flex items-start gap-4 cursor-pointer transition-all">
+<div class="w-6 h-6 rounded-full border-2 border-primary bg-primary flex items-center justify-center text-on-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-sm font-bold">check</span>
+</div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-on-surface font-bold">Бережная подруга <span class="text-xs font-normal text-primary ml-2 px-2 py-0.5 rounded-full bg-primary-fixed/60">Текущий выбор</span></h3>
+<span class="material-symbols-outlined text-primary text-base">favorite</span>
+</div>
+<p class="font-body-sm text-on-surface-variant mt-1">
+                  Мягкая поддержка, напоминания попить воды и подышать, никаких токсичных дедлайнов и чувства вины. Всегда предлагает разбить задачу на микро-шаги.
+                </p>
+</div>
+</div>
+<!-- Option 2: Академический наставник -->
+<div class="p-4 rounded-2xl border border-outline-variant/30 bg-surface-container-low/50 hover:bg-surface-container-low flex items-start gap-4 cursor-pointer transition-all">
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant bg-transparent shrink-0 mt-0.5"></div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-on-surface font-semibold">Академический наставник</h3>
+<span class="material-symbols-outlined text-outline text-base">school</span>
+</div>
+<p class="font-body-sm text-on-surface-variant mt-1">
+                  Четкие спринты, акцент на кодификатор ФИПИ, алгоритмы задач второй части и разбор строгих критериев экспертов.
+                </p>
+</div>
+</div>
+<!-- Option 3: Дзен-коуч -->
+<div class="p-4 rounded-2xl border border-outline-variant/30 bg-surface-container-low/50 hover:bg-surface-container-low flex items-start gap-4 cursor-pointer transition-all">
+<div class="w-6 h-6 rounded-full border-2 border-outline-variant bg-transparent shrink-0 mt-0.5"></div>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<h3 class="font-title-md text-on-surface font-semibold">Дзен-коуч</h3>
+<span class="material-symbols-outlined text-outline text-base">self_improvement</span>
+</div>
+<p class="font-body-sm text-on-surface-variant mt-1">
+                  Дыхательные практики 4-7-8, медитативные перерывы, баланс между греблей, сном и решением пробников без суеты.
+                </p>
+</div>
+</div>
+</div>
+<!-- Slider: Level of empathy & soft deadlines -->
+<div class="p-4 rounded-2xl bg-surface-container-low paper-border flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-title-md text-xs font-semibold text-on-surface block">Уровень эмпатии и мягкости дедлайнов</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Автоматический перенос задач при усталости или падении энергии</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary text-on-primary font-title-md text-xs font-bold">95%</span>
+</div>
+<input class="custom-slider w-full cursor-pointer" max="100" min="0" type="range" value="95"/>
+<div class="flex justify-between items-center text-[11px] font-label-sm text-on-surface-variant">
+<span>Строгий ФИПИ-спринт</span>
+<span class="text-primary font-medium">Сверхбережный режим (забота и отдых)</span>
+</div>
+</div>
+</div>
+<!-- Right 5 Cols: Maya's Knowledge Base (Interactive Memory Tags) -->
+<div class="lg:col-span-5 bg-surface-container-lowest rounded-3xl p-space-xl paper-border paper-shadow flex flex-col justify-between gap-6">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">memory</span>
+<h2 class="font-title-lg text-title-lg font-bold text-on-surface">Что Майя помнит обо мне</h2>
+</div>
+<span class="font-label-sm text-xs text-on-surface-variant px-2 py-0.5 rounded-md bg-surface-container">Память 8/12 фактов</span>
+</div>
+<p class="font-body-sm text-on-surface-variant">Эти контекстные якоря помогают Майе подбирать примеры из реальной жизни и беречь твое расписание.</p>
+<!-- Memory Category Groups -->
+<div class="space-y-3.5">
+<!-- Academic subjects -->
+<div class="p-3 rounded-2xl bg-surface-container-low paper-border">
+<span class="font-label-sm text-[11px] text-on-surface-variant block uppercase tracking-wider mb-2">Сдает на ЕГЭ 2025</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary-fixed/50 text-on-primary-fixed-variant font-label-md text-xs">
+<span class="material-symbols-outlined text-xs">functions</span> Проф. математика
+                  </span>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary-fixed/50 text-on-primary-fixed-variant font-label-md text-xs">
+<span class="material-symbols-outlined text-xs">edit_note</span> Русский язык
+                  </span>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-fixed/50 text-on-secondary-fixed-variant font-label-md text-xs">
+<span class="material-symbols-outlined text-xs">terminal</span> КЕГЭ Информатика
+                  </span>
+</div>
+</div>
+<!-- Life & Hobbies -->
+<div class="p-3 rounded-2xl bg-surface-container-low paper-border">
+<span class="font-label-sm text-[11px] text-on-surface-variant block uppercase tracking-wider mb-2">Вне учебы &amp; Спорт</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container-highest text-on-surface font-label-md text-xs">
+<span class="material-symbols-outlined text-xs">kayaking</span> Гребля (вт/чт 19:30)
+                  </span>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-xs">
+<span class="material-symbols-outlined text-xs">view_in_ar</span> Бренд Jazz (3D-печать Anycubic)
+                  </span>
+</div>
+</div>
+<!-- Soulmate & Safe places -->
+<div class="p-3 rounded-2xl bg-surface-container-low paper-border">
+<span class="font-label-sm text-[11px] text-on-surface-variant block uppercase tracking-wider mb-2">Соулмейт &amp; Места силы</span>
+<div class="flex flex-wrap gap-1.5">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-fixed/50 text-on-secondary-fixed-variant font-label-md text-xs">
+<span class="material-symbols-outlined text-xs">person_pin</span> Ксюша Дубова (11 «Б»)
+                  </span>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary-fixed/40 text-on-primary-fixed-variant font-label-md text-xs">
+<span class="material-symbols-outlined text-xs">local_cafe</span> Кофейня «Слой» на Петроградке
+                  </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Add fact action -->
+<div class="flex items-center gap-2 pt-2 border-t border-outline-variant/20">
+<button class="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-xs paper-border transition-all">
+<span class="material-symbols-outlined text-base">add</span>
+<span>Добавить факт</span>
+</button>
+<button class="flex-1 flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-full bg-surface-container hover:bg-surface-container-high text-primary font-title-md text-xs paper-border transition-all">
+<span class="material-symbols-outlined text-base">mic</span>
+<span>Надиктовать о себе</span>
+</button>
+</div>
+</div>
+</section>
+<!-- ===================================================================== -->
+<!-- SECTION 3: VISUAL STYLING & PASTEL THEMES                             -->
+<!-- ===================================================================== -->
+<section class="bg-surface-container-lowest rounded-3xl p-space-xl paper-border paper-shadow flex flex-col gap-6">
+<div class="flex items-start justify-between flex-wrap gap-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-2xl bg-secondary-fixed/50 flex items-center justify-center text-secondary shrink-0 paper-border">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">palette</span>
+</div>
+<div>
+<h2 class="font-title-lg text-title-lg font-bold text-on-surface">Атмосфера и цвета приложения</h2>
+<p class="font-body-sm text-on-surface-variant">Цветовые палитры вдохновлены кофе, японской бумагой и утренним светом</p>
+</div>
+</div>
+<span class="font-body-sm text-xs text-on-surface-variant bg-surface-container px-3 py-1 rounded-full">Палитра: 4 варианта гармонии</span>
+</div>
+<!-- 4 Pastel Theme Selector Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<!-- Theme 1: Матча & Ваниль (Active) -->
+<div class="relative p-4 rounded-2xl border-2 border-primary bg-surface-container-low/60 paper-shadow cursor-pointer transition-all group">
+<div class="absolute top-3 right-3 w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-xs font-bold">check</span>
+</div>
+<!-- Palette swatches -->
+<div class="flex items-center gap-1.5 mb-3">
+<span class="w-6 h-6 rounded-full bg-[#fcf9f4] border border-outline-variant/40" title="Сливочный фон"></span>
+<span class="w-6 h-6 rounded-full bg-[#4d6b4b]" title="Матча зеленый"></span>
+<span class="w-6 h-6 rounded-full bg-[#c9ecc4]" title="Пенка матча"></span>
+<span class="w-6 h-6 rounded-full bg-[#ebe8e3]" title="Ваниль"></span>
+</div>
+<h4 class="font-title-md text-sm font-bold text-on-surface">Матча &amp; Ваниль</h4>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-1">Текущая активная тема. Сливочный фон, оливковая матча и спокойствие.</p>
+<div class="mt-3 inline-block px-2.5 py-0.5 rounded-full bg-primary-fixed/60 text-on-primary-fixed font-label-sm text-[10px]">
+              Активна сейчас
+            </div>
+</div>
+<!-- Theme 2: Лавандовый лоу-фай -->
+<div class="p-4 rounded-2xl border border-outline-variant/30 bg-surface-container-low hover:bg-surface-container-high/40 cursor-pointer transition-all group">
+<div class="flex items-center gap-1.5 mb-3">
+<span class="w-6 h-6 rounded-full bg-[#f8f5fd] border border-outline-variant/40"></span>
+<span class="w-6 h-6 rounded-full bg-[#625980]"></span>
+<span class="w-6 h-6 rounded-full bg-[#e8ddff]"></span>
+<span class="w-6 h-6 rounded-full bg-[#352c4e]"></span>
+</div>
+<h4 class="font-title-md text-sm font-semibold text-on-surface group-hover:text-secondary transition-colors">Лавандовый лоу-фай</h4>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-1">Ночной уют, приглушенный черничный тон, мягкий лунный свет для поздних эссе.</p>
+<div class="mt-3 inline-block px-2.5 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-[10px]">
+              Выбрать тему
+            </div>
+</div>
+<!-- Theme 3: Теплый кофейный крафт -->
+<div class="p-4 rounded-2xl border border-outline-variant/30 bg-surface-container-low hover:bg-surface-container-high/40 cursor-pointer transition-all group">
+<div class="flex items-center gap-1.5 mb-3">
+<span class="w-6 h-6 rounded-full bg-[#fbf7f2] border border-outline-variant/40"></span>
+<span class="w-6 h-6 rounded-full bg-[#736054]"></span>
+<span class="w-6 h-6 rounded-full bg-[#f7ddcf]"></span>
+<span class="w-6 h-6 rounded-full bg-[#3d322a]"></span>
+</div>
+<h4 class="font-title-md text-sm font-semibold text-on-surface group-hover:text-tertiary transition-colors">Теплый кофейный крафт</h4>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-1">Карамельные акценты обжаренных зерен, плотный картон и молочная пенка рафа.</p>
+<div class="mt-3 inline-block px-2.5 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-[10px]">
+              Выбрать тему
+            </div>
+</div>
+<!-- Theme 4: Розовый кварц & Пион -->
+<div class="p-4 rounded-2xl border border-outline-variant/30 bg-surface-container-low hover:bg-surface-container-high/40 cursor-pointer transition-all group">
+<div class="flex items-center gap-1.5 mb-3">
+<span class="w-6 h-6 rounded-full bg-[#fdf8f8] border border-outline-variant/40"></span>
+<span class="w-6 h-6 rounded-full bg-[#8c5a6b]"></span>
+<span class="w-6 h-6 rounded-full bg-[#fcdde5]"></span>
+<span class="w-6 h-6 rounded-full bg-[#4a2e37]"></span>
+</div>
+<h4 class="font-title-md text-sm font-semibold text-on-surface transition-colors">Розовый кварц &amp; Пион</h4>
+<p class="font-body-sm text-[12px] text-on-surface-variant mt-1">Пудрово-розовые акценты, лепестки пионов, деликатный серый шелк и нежность.</p>
+<div class="mt-3 inline-block px-2.5 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-sm text-[10px]">
+              Выбрать тему
+            </div>
+</div>
+</div>
+<!-- Tactile Sound & Sensory Settings Banner -->
+<div class="p-4 rounded-2xl bg-surface-container-low paper-border flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-xl bg-surface-container-highest flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-xl">volume_up</span>
+</div>
+<div>
+<span class="font-title-md text-sm font-semibold text-on-surface block">Тактильные звуки блокнота и лоу-фай фокус</span>
+<span class="font-body-sm text-xs text-on-surface-variant">Шуршание плотной хлопковой бумаги при чек-боксах и тихий деревянный клик таймера</span>
+</div>
+</div>
+<!-- Toggle switch (Active) -->
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</section>
+<!-- ===================================================================== -->
+<!-- SECTION 4: INTEGRATIONS & NOTIFICATIONS (TELEGRAM BOT MAYA)           -->
+<!-- ===================================================================== -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Telegram Bot Settings (8 cols) -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-3xl p-space-xl paper-border paper-shadow flex flex-col gap-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-2xl bg-[#2AABEE]/15 flex items-center justify-center text-[#2AABEE] shrink-0 paper-border">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">send</span>
+</div>
+<div>
+<h2 class="font-title-lg text-title-lg font-bold text-on-surface">Связка с Telegram-ботом @maya_safari_bot</h2>
+<div class="flex items-center gap-2 mt-0.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-md text-xs text-primary font-medium">Подключен (аккаунт @anya_jazz)</span>
+</div>
+</div>
+</div>
+<!-- Test Voice Action -->
+<button class="flex items-center gap-2 px-3.5 py-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-xs paper-border transition-all active:scale-95 shadow-sm">
+<span class="material-symbols-outlined text-primary text-base">record_voice_over</span>
+<span>Отправить тест в Telegram</span>
+</button>
+</div>
+<!-- Notification Toggles in Warm Paper Tiles -->
+<div class="space-y-3">
+<!-- Item 1: Утренний вайб -->
+<div class="p-3.5 rounded-2xl bg-surface-container-low paper-border flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">wb_sunny</span>
+<div>
+<span class="font-title-md text-xs font-semibold text-on-surface block">Утренний «Вайб дня» и мягкий план</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Отправка в 07:45 с вдохновляющей цитатой и приоритетом на первые 3 урока</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Item 2: Предупреждение о звонке и Умскул -->
+<div class="p-3.5 rounded-2xl bg-surface-container-low paper-border flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-xl">alarm</span>
+<div>
+<span class="font-title-md text-xs font-semibold text-on-surface block">Предупреждение за 15 минут до школьного звонка и вебинара Умскул</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Деликатное напоминание заварить чай и открыть конспекты</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Item 3: Окна с Ксюшей -->
+<div class="p-3.5 rounded-2xl bg-surface-container-low paper-border flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-xl">group</span>
+<div>
+<span class="font-title-md text-xs font-semibold text-on-surface block">Синхронизация свободных окон с Ксюшей в чате</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Находит пересечения в расписании для прогулки или чашки кофе в «Слое»</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+<!-- Item 4: Вечерний бережный чек-ин -->
+<div class="p-3.5 rounded-2xl bg-surface-container-low paper-border flex items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-xl">nights_stay</span>
+<div>
+<span class="font-title-md text-xs font-semibold text-on-surface block">Вечерний бережный чек-ин («Как ты себя чувствуешь?»)</span>
+<span class="font-body-sm text-[12px] text-on-surface-variant">В 21:30 без подсчета несделанных пунктов, только теплое подведение итогов дня</span>
+</div>
+</div>
+<label class="relative inline-flex items-center cursor-pointer shrink-0">
+<input checked="" class="sr-only peer" type="checkbox"/>
+<div class="w-10 h-5 bg-surface-container-highest rounded-full peer peer-checked:after:translate-x-full after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Data Security & Privacy Philosophy (4 cols) -->
+<div class="lg:col-span-4 bg-surface-container-lowest rounded-3xl p-space-xl paper-border paper-shadow flex flex-col justify-between gap-6">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2.5">
+<span class="material-symbols-outlined text-primary text-xl" style="font-variation-settings: 'FILL' 1;">security</span>
+<h2 class="font-title-lg text-title-lg font-bold text-on-surface">Безопасность &amp; Экспорт</h2>
+</div>
+<!-- Philosophy Box -->
+<div class="p-4 rounded-2xl bg-primary-fixed/20 paper-border">
+<div class="flex items-center gap-2 text-primary font-title-md text-xs mb-1.5 font-bold">
+<span class="material-symbols-outlined text-base">lock</span>
+<span>Философия Майи</span>
+</div>
+<p class="font-body-sm text-xs text-on-surface-variant leading-relaxed">
+                «Твои мысли, голосовые заметки и личные рецензии остаются строго конфиденциальными на твоем устройстве. Никакой продажи данных и назойливой рекламы».
+              </p>
+</div>
+<!-- Export Buttons List -->
+<div class="space-y-2">
+<span class="font-label-sm text-[11px] text-on-surface-variant block uppercase tracking-wider">Экспорт кодификатора &amp; расписания</span>
+<button class="w-full flex items-center justify-between p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container paper-border text-xs font-title-md text-on-surface transition-colors">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-on-surface-variant">calendar_month</span>
+<span>Apple Calendar &amp; Google Cal (.ics)</span>
+</span>
+<span class="material-symbols-outlined text-sm text-on-surface-variant">download</span>
+</button>
+<button class="w-full flex items-center justify-between p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container paper-border text-xs font-title-md text-on-surface transition-colors">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-on-surface-variant">description</span>
+<span>Синхронизация с Notion Workspace</span>
+</span>
+<span class="material-symbols-outlined text-sm text-on-surface-variant">sync</span>
+</button>
+<button class="w-full flex items-center justify-between p-2.5 rounded-xl bg-surface-container-low hover:bg-surface-container paper-border text-xs font-title-md text-on-surface transition-colors">
+<span class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-on-surface-variant">picture_as_pdf</span>
+<span>Печатный трекер подготовки (PDF)</span>
+</span>
+<span class="material-symbols-outlined text-sm text-on-surface-variant">file_download</span>
+</button>
+</div>
+</div>
+<!-- Cloud Backup Pill -->
+<div class="flex items-center justify-between pt-3 border-t border-outline-variant/20 text-xs">
+<span class="text-on-surface-variant font-body-sm">Резервная копия: 18 минут назад</span>
+<span class="text-primary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-xs">cloud_done</span> Google Drive
+            </span>
+</div>
+</div>
+</section>
+<!-- Bottom Page Note: Warm Encouragement -->
+<footer class="text-center py-4">
+<p class="font-body-sm text-xs text-on-surface-variant/80">
+          «Ты делаешь всё правильно. Даже маленький шаг — это уже движение вперед» • Coffee, Vanilla &amp; Matcha v2.4
+        </p>
+</footer>
+</main>
+</div>
+<div class="fixed inset-0 bg-[#1c1c19]/40 backdrop-blur-sm z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto" id="add-fact-modal"><div class="bg-[#fcf9f4] border border-[#c3c8be]/60 rounded-3xl p-6 sm:p-8 max-w-xl w-full paper-shadow relative flex flex-col gap-5 my-auto"><div class="flex items-start justify-between gap-4"><div><div class="flex flex-wrap items-center gap-2 mb-2"><div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed/50 text-on-primary-fixed-variant font-label-sm text-xs"><span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">psychology</span><span>Контекстный якорь • Память Майи</span></div><div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-xs font-semibold"><span class="w-2 h-2 rounded-full bg-[#ba1a1a] animate-ping"></span><span class="material-symbols-outlined text-xs text-[#ba1a1a]" style="font-variation-settings: 'FILL' 1;">mic</span><span>Идет запись... • 00:14</span></div></div><h3 class="font-headline-md text-xl sm:text-2xl font-bold text-on-surface flex items-center gap-2"><span>Слушаю твою мысль...</span><span class="material-symbols-outlined text-primary text-xl animate-pulse">auto_awesome</span></h3><p class="font-body-sm text-xs text-on-surface-variant mt-1 leading-relaxed">Майя в реальном времени превращает голосовую заметку в структурированный контекст для расписания и отдыха.</p></div><button aria-label="Закрыть" class="w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors shrink-0 paper-border" onclick="document.getElementById('add-fact-modal').remove()"><span class="material-symbols-outlined text-lg">close</span></button></div><div class="flex flex-col gap-2"><div class="flex items-center justify-between"><label class="font-label-sm text-xs text-on-surface-variant font-semibold uppercase tracking-wider flex items-center gap-1.5"><span class="material-symbols-outlined text-xs text-primary">record_voice_over</span><span>Живая расшифровка (Live Transcription)</span></label><span class="font-label-sm text-[11px] text-primary flex items-center gap-1 font-medium"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span><span>Распознавание речи...</span></span></div><div class="relative rounded-2xl bg-surface-container-lowest border-2 border-primary/40 p-4 min-h-[110px] paper-shadow"><p class="font-body-md text-sm text-on-surface leading-relaxed">«Майя, запомни: по четвергам после школы в 18:00 у меня свободный час до тренировки по гребле. В это время мы обычно берем матча-латте в «Слое» с Ксюшей...»<span class="inline-block w-2 h-4 ml-1 bg-primary align-middle animate-pulse rounded-full"></span></p><div class="flex items-center gap-1.5 mt-3 pt-2 border-t border-outline-variant/20 text-[11px] text-on-surface-variant"><span class="material-symbols-outlined text-xs text-primary">hearing</span><span>Слушаю тебя... Говори свободно, Майя выделит главное.</span></div></div></div><div class="p-4 rounded-2xl bg-surface-container-low paper-border flex flex-col gap-3.5"><div class="flex items-center justify-between"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base">graphic_eq</span><span class="font-title-md text-xs font-semibold text-on-surface">Аудиоволна голоса</span></div><div class="flex items-center gap-1.5 text-xs font-label-md"><span class="font-bold text-primary">00:14</span><span class="text-on-surface-variant">/ 01:00</span></div></div><div class="flex items-center justify-center gap-1 sm:gap-1.5 h-12 px-3 py-1 bg-surface-container-lowest/80 rounded-xl paper-border"><span class="w-1 bg-primary/30 rounded-full h-3 animate-pulse"></span><span class="w-1 bg-primary/40 rounded-full h-5 animate-pulse" style="animation-delay: 0.1s;"></span><span class="w-1 bg-primary rounded-full h-8 animate-pulse" style="animation-delay: 0.25s;"></span><span class="w-1 bg-primary-container rounded-full h-11 animate-pulse" style="animation-delay: 0.05s;"></span><span class="w-1 bg-primary rounded-full h-7 animate-pulse" style="animation-delay: 0.3s;"></span><span class="w-1 bg-primary/60 rounded-full h-4 animate-pulse" style="animation-delay: 0.15s;"></span><span class="w-1 bg-primary rounded-full h-9 animate-pulse" style="animation-delay: 0.4s;"></span><span class="w-1 bg-primary-container rounded-full h-12 animate-pulse" style="animation-delay: 0.2s;"></span><span class="w-1 bg-primary rounded-full h-10 animate-pulse" style="animation-delay: 0.35s;"></span><span class="w-1 bg-primary/70 rounded-full h-6 animate-pulse" style="animation-delay: 0.1s;"></span><span class="w-1 bg-primary rounded-full h-8 animate-pulse" style="animation-delay: 0.5s;"></span><span class="w-1 bg-primary-container rounded-full h-11 animate-pulse" style="animation-delay: 0.18s;"></span><span class="w-1 bg-primary rounded-full h-7 animate-pulse" style="animation-delay: 0.28s;"></span><span class="w-1 bg-primary/40 rounded-full h-4 animate-pulse" style="animation-delay: 0.45s;"></span><span class="w-1 bg-primary/20 rounded-full h-2 animate-pulse" style="animation-delay: 0.12s;"></span></div><div class="flex items-center justify-center gap-3 pt-1"><button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-xs paper-border transition-all" title="Перезаписать"><span class="material-symbols-outlined text-sm">replay</span><span>Перезаписать</span></button><div class="relative flex items-center justify-center"><span class="absolute w-12 h-12 rounded-full bg-primary-fixed/60 animate-ping pointer-events-none"></span><button class="w-11 h-11 rounded-full bg-primary text-on-primary flex items-center justify-center paper-shadow hover:scale-105 active:scale-95 transition-all relative z-10" title="Остановить или пауза"><span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">mic</span></button></div><button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-xs paper-border transition-all" title="Пауза записи"><span class="material-symbols-outlined text-sm">pause</span><span>Пауза</span></button></div></div><div class="flex items-center gap-2 px-3 py-2 rounded-xl bg-primary-fixed/20 paper-border"><span class="material-symbols-outlined text-primary text-sm shrink-0">lock</span><span class="font-body-sm text-[11px] text-on-surface-variant">Аудио обрабатывается локально на устройстве с заботой о приватности.</span></div><div class="flex items-center justify-between gap-3 pt-2 border-t border-outline-variant/20"><button class="px-4 py-2.5 rounded-full border border-outline-variant/40 bg-surface-container-low hover:bg-surface-container text-on-surface font-title-md text-xs paper-border transition-all" onclick="document.getElementById('add-fact-modal').remove()">Отмена записи</button><button class="px-6 py-2.5 rounded-full bg-primary text-on-primary hover:bg-primary-container font-title-md text-xs shadow-sm flex items-center gap-2 active:scale-95 transition-all" onclick="document.getElementById('add-fact-modal').remove()"><span class="material-symbols-outlined text-base">check_circle</span><span>Готово, применить факт</span></button></div></div></div></body></html>

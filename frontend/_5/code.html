@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Привычки &amp; Баланс | Coffee, Vanilla &amp; Matcha</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-primary-fixed": "#052108",
+            "tertiary-container": "#736054",
+            "on-background": "#1c1c19",
+            "error-container": "#ffdad6",
+            "surface-variant": "#e5e2dd",
+            "outline-variant": "#c3c8be",
+            "on-tertiary": "#ffffff",
+            "on-error-container": "#93000a",
+            "surface": "#fcf9f4",
+            "on-surface": "#1c1c19",
+            "tertiary-fixed": "#f7ddcf",
+            "inverse-on-surface": "#f3f0eb",
+            "surface-dim": "#dcdad5",
+            "surface-container-high": "#ebe8e3",
+            "on-tertiary-fixed-variant": "#544339",
+            "surface-container-low": "#f6f3ee",
+            "surface-bright": "#fcf9f4",
+            "on-tertiary-container": "#f6dcce",
+            "on-tertiary-fixed": "#261910",
+            "primary": "#365335",
+            "surface-tint": "#486646",
+            "secondary-container": "#ddd0ff",
+            "tertiary": "#5a483e",
+            "on-secondary": "#ffffff",
+            "on-secondary-fixed-variant": "#4a4167",
+            "inverse-primary": "#aecfa9",
+            "error": "#ba1a1a",
+            "on-primary-container": "#c8eac2",
+            "secondary-fixed-dim": "#ccc0ee",
+            "on-secondary-container": "#61577f",
+            "tertiary-fixed-dim": "#dac2b4",
+            "background": "#fcf9f4",
+            "outline": "#737970",
+            "on-primary": "#ffffff",
+            "primary-fixed-dim": "#aecfa9",
+            "inverse-surface": "#31302d",
+            "on-surface-variant": "#434841",
+            "on-primary-fixed-variant": "#314d30",
+            "on-error": "#ffffff",
+            "on-secondary-fixed": "#1e1539",
+            "primary-container": "#4d6b4b",
+            "surface-container-highest": "#e5e2dd",
+            "primary-fixed": "#c9ecc4",
+            "secondary-fixed": "#e8ddff",
+            "surface-container-lowest": "#ffffff",
+            "secondary": "#625980",
+            "surface-container": "#f0ede9"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "gutter-md": "1.5rem",
+            "margin": "1rem",
+            "space-xl": "2.25rem",
+            "space-md": "1rem",
+            "margin-md": "2rem",
+            "space-xs": "0.25rem",
+            "space-lg": "1.5rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "title-lg": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-md": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "label-sm": ["11px", {"lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500"}],
+            "title-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "headline-xl-mobile": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+            "headline-lg-mobile": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "title-lg": ["18px", {"lineHeight": "26px", "fontWeight": "600"}],
+            "body-lg": ["16px", {"lineHeight": "26px", "fontWeight": "400"}],
+            "headline-xl": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600"}],
+            "body-md": ["14px", {"lineHeight": "22px", "fontWeight": "400"}],
+            "label-md": ["12px", {"lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600"}],
+            "body-sm": ["13px", {"lineHeight": "18px", "fontWeight": "400"}],
+            "headline-md": ["22px", {"lineHeight": "30px", "fontWeight": "600"}]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      background-color: #FAF7F2;
+      color: #1c1c19;
+      -webkit-font-smoothing: antialiased;
+    }
+    .paper-shadow {
+      box-shadow: 0 4px 16px -2px rgba(61, 50, 42, 0.04), 0 1px 3px 0 rgba(61, 50, 42, 0.02);
+      border: 1px solid rgba(61, 50, 42, 0.06);
+    }
+    .washi-tape {
+      background: rgba(216, 230, 215, 0.65);
+      backdrop-filter: blur(2px);
+    }
+    .strikethrough-transition {
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background min-h-screen pb-28 text-on-surface antialiased">
+<!-- Desktop Top Container Constrained -->
+<div class="max-w-[430px] mx-auto min-h-screen bg-background relative flex flex-col">
+<!-- TopAppBar (from Shared Components JSON: docked, full-width, shadow-sm, bg-surface-container-low) -->
+<header class="bg-surface-container-low shadow-sm sticky top-0 z-40 flex justify-between items-center w-full px-margin py-space-sm">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant/30 flex-shrink-0 bg-surface-container">
+<img class="w-full h-full object-cover" data-alt="Warm aesthetic portrait of Anya, a young creative female student in cozy olive knit sweater in a gentle morning light café atmosphere, warm film grain and Korean stationery minimalism tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9QwccComAYI85Ke2qDQ5_TGcm8--ICkGZAn3-t8bEb5dPSXoW-ACXYztgEKLRO0hSvbFGywqTyHhCCrfp2IjfAPWnINjO8ssJLihDA1o8gQhHYshYNSyubf2rseNnL6Lrf-1hdZsbJ0Hoece7es7hsboTaoryj3FftAc6fomPsCPTEES1RHCQqbvqU8PKXjXccDrXBNbfzTZbQTweZCZ-XqMT3dvCZ1btd7ujYTPUN_x8VdPut2BEOw"/>
+</div>
+<div>
+<span class="text-label-md font-label-md text-on-surface-variant block leading-tight">Coffee, Vanilla &amp; Matcha</span>
+<h1 class="text-headline-lg-mobile font-headline-lg-mobile text-primary tracking-tight font-bold">Привет, Аня 🌿</h1>
+</div>
+</div>
+<button aria-label="Звуковая медитация" class="w-10 h-10 rounded-full flex items-center justify-center text-primary hover:bg-surface-container-high transition-colors duration-200 active:scale-[0.985]">
+<span class="material-symbols-outlined" data-icon="graphic_eq">graphic_eq</span>
+</button>
+</header>
+<!-- Main Journal Content -->
+<main class="px-margin pt-space-md flex-1 space-y-space-md">
+<!-- Gentle Streak Card (No Guilt, Mindful Habit Journaling) -->
+<section class="paper-shadow bg-surface-container-lowest rounded-DEFAULT p-space-md relative overflow-hidden">
+<div class="absolute -top-3 right-6 washi-tape px-3 py-0.5 rounded-sm transform rotate-1">
+<span class="text-label-sm font-label-sm text-primary font-semibold">забота о себе</span>
+</div>
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-title-md" data-icon="spa" style="font-variation-settings: 'FILL' 1;">spa</span>
+<span class="text-title-md font-title-md text-primary">14 дней заботы о себе</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+              Мягкий ритм без штрафов за паузы. Ты на верном пути, в своем комфортном темпе.
+            </p>
+</div>
+</div>
+<!-- Habit cadence dots -->
+<div class="flex items-center justify-between mt-space-md pt-space-xs border-t border-surface-container">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-primary/40"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-surface-container-high"></span>
+</div>
+<span class="text-label-sm font-label-sm text-tertiary">Осознанный баланс</span>
+</div>
+</section>
+<!-- Hydration & Matcha Trackers (Interactive Bento Flow) -->
+<section class="paper-shadow bg-surface-container-lowest rounded-DEFAULT p-space-md">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-title-md" data-icon="water_drop" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+<h2 class="text-title-md font-title-md text-on-surface">Гидратация &amp; Матча</h2>
+</div>
+<span class="text-label-md font-label-md text-primary bg-primary-fixed/40 px-2.5 py-1 rounded-full" id="water-counter">5 из 7 стаканов</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-space-sm">
+          Теплая вода с лимоном и утренняя церемониальная матча для ровной энергии без спадов.
+        </p>
+<!-- Visual Glasses Strip -->
+<div class="grid grid-cols-7 gap-1.5 py-space-xs mb-space-sm" id="glasses-container">
+<div class="h-9 rounded-md bg-primary flex items-center justify-center text-on-primary text-xs shadow-xs transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="check">check</span>
+</div>
+<div class="h-9 rounded-md bg-primary flex items-center justify-center text-on-primary text-xs shadow-xs transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="check">check</span>
+</div>
+<div class="h-9 rounded-md bg-primary flex items-center justify-center text-on-primary text-xs shadow-xs transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="check">check</span>
+</div>
+<div class="h-9 rounded-md bg-primary flex items-center justify-center text-on-primary text-xs shadow-xs transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="check">check</span>
+</div>
+<div class="h-9 rounded-md bg-primary flex items-center justify-center text-on-primary text-xs shadow-xs transition-transform active:scale-95">
+<span class="material-symbols-outlined text-[18px]" data-icon="check">check</span>
+</div>
+<div class="h-9 rounded-md bg-surface-container border border-dashed border-outline-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] opacity-40" data-icon="local_cafe">local_cafe</span>
+</div>
+<div class="h-9 rounded-md bg-surface-container border border-dashed border-outline-variant flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px] opacity-40" data-icon="local_cafe">local_cafe</span>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="flex-1 bg-surface-container-high hover:bg-surface-container text-on-surface font-title-md text-title-md py-2.5 px-space-md rounded-full flex items-center justify-center gap-1.5 transition-colors active:scale-[0.985]" id="add-water-btn" onclick="addWater()">
+<span class="material-symbols-outlined text-[18px]" data-icon="add">add</span>
+<span>+1 стакан воды</span>
+</button>
+<div class="px-space-md py-2 rounded-full bg-secondary-fixed/50 text-secondary flex items-center gap-1 text-label-md font-label-md">
+<span class="material-symbols-outlined text-[16px]" data-icon="eco">eco</span>
+<span>1 матча выпита</span>
+</div>
+</div>
+</section>
+<!-- Bullet Journal Habits Section -->
+<section class="space-y-space-sm">
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-tertiary text-title-md" data-icon="edit_note">edit_note</span>
+<h2 class="text-title-lg font-title-lg text-on-surface">Привычки дня • Bullet Journal</h2>
+</div>
+<span class="text-label-sm font-label-sm text-tertiary">3 из 4 выполнено</span>
+</div>
+<!-- Habit 1: Reading -->
+<article class="paper-shadow bg-surface-container-lowest rounded-DEFAULT p-space-md transition-all">
+<div class="flex items-start gap-space-sm">
+<button aria-label="Отметить чтение" class="mt-0.5 w-[22px] h-[22px] rounded-[6px] bg-primary flex items-center justify-center text-on-primary transition-all flex-shrink-0" onclick="toggleHabit(this)">
+<span class="material-symbols-outlined text-[16px]" data-icon="check">check</span>
+</button>
+<div class="flex-1 space-y-1">
+<div class="flex items-center justify-between">
+<span class="text-title-md font-title-md text-on-surface strikethrough-transition">📖 Салли Руни «Нормальные люди»</span>
+<span class="text-label-sm font-label-sm bg-primary-fixed/40 text-primary px-2 py-0.5 rounded-full">180 / 320 стр.</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+                Глава 9. Медленное вечернее чтение под теплым светом торшера без смартфона.
+              </p>
+<!-- Progress bar -->
+<div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden mt-1.5">
+<div class="bg-primary-container h-full rounded-full w-[56%] transition-all duration-300"></div>
+</div>
+</div>
+</div>
+</article>
+<!-- Habit 2: Rowing Club -->
+<article class="paper-shadow bg-surface-container-lowest rounded-DEFAULT p-space-md transition-all">
+<div class="flex items-start gap-space-sm">
+<button aria-label="Отметить тренировку" class="mt-0.5 w-[22px] h-[22px] rounded-[6px] bg-surface-container border-[1.5px] border-outline-variant flex items-center justify-center text-transparent hover:border-primary transition-all flex-shrink-0" onclick="toggleHabit(this)">
+<span class="material-symbols-outlined text-[16px] text-on-primary" data-icon="check">check</span>
+</button>
+<div class="flex-1 space-y-1">
+<div class="flex items-center justify-between">
+<span class="text-title-md font-title-md text-on-surface strikethrough-transition">🚣 Гребля в клубе (Четверг 19:30)</span>
+<span class="text-label-sm font-label-sm bg-secondary-fixed/50 text-secondary px-2 py-0.5 rounded-full">на воде</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+                Тренировка на воде: синхронизация дыхания, гребной клуб на набережной, свежий воздух.
+              </p>
+</div>
+</div>
+</article>
+<!-- Habit 3: Breathing Pause -->
+<article class="paper-shadow bg-surface-container-lowest rounded-DEFAULT p-space-md transition-all">
+<div class="flex items-start gap-space-sm">
+<button aria-label="Отметить дыхание" class="mt-0.5 w-[22px] h-[22px] rounded-[6px] bg-primary flex items-center justify-center text-on-primary transition-all flex-shrink-0" onclick="toggleHabit(this)">
+<span class="material-symbols-outlined text-[16px]" data-icon="check">check</span>
+</button>
+<div class="flex-1 space-y-1">
+<div class="flex items-center justify-between">
+<span class="text-title-md font-title-md text-on-surface strikethrough-transition">🧘 Дыхательная пауза 4-7-8</span>
+<span class="text-label-sm font-label-sm bg-surface-container-high text-tertiary px-2 py-0.5 rounded-full">3 мин сон</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+                Снижение вечернего кортизола: 4 сек вдох, 7 сек задержка, 8 сек мягкий выдох.
+              </p>
+</div>
+</div>
+</article>
+<!-- Habit 4: Morning Matcha Ritual -->
+<article class="paper-shadow bg-surface-container-lowest rounded-DEFAULT p-space-md transition-all">
+<div class="flex items-start gap-space-sm">
+<button aria-label="Отметить ритуал" class="mt-0.5 w-[22px] h-[22px] rounded-[6px] bg-primary flex items-center justify-center text-on-primary transition-all flex-shrink-0" onclick="toggleHabit(this)">
+<span class="material-symbols-outlined text-[16px]" data-icon="check">check</span>
+</button>
+<div class="flex-1 space-y-1">
+<div class="flex items-center justify-between">
+<span class="text-title-md font-title-md text-on-surface strikethrough-transition">🍵 Утренний матча-ритуал без экрана</span>
+<span class="text-label-sm font-label-sm bg-primary-fixed/40 text-primary px-2 py-0.5 rounded-full">осознанность</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+                Бамбуковый венчик тясэн, овсяное молоко, тишина и вид из окна на зеленую аллею.
+              </p>
+</div>
+</div>
+</article>
+</section>
+<!-- Anya's Creative Project Card: Brand "Jazz" -->
+<section class="paper-shadow bg-surface-container-lowest rounded-DEFAULT p-space-md relative overflow-hidden">
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-tertiary" data-icon="token">token</span>
+<span class="text-label-md font-label-md text-tertiary font-bold tracking-wide">ТВОРЧЕСКИЙ ПРОЕКТ АНИ</span>
+</div>
+<span class="text-label-sm font-label-sm bg-tertiary-fixed text-on-tertiary-fixed-variant px-2.5 py-0.5 rounded-full font-semibold">бренд «Jazz»</span>
+</div>
+<h3 class="text-title-lg font-title-lg text-on-surface mb-1">
+          3D-печать пуговиц &amp; фурнитуры из фотополимера
+        </h3>
+<p class="text-body-sm font-body-sm text-on-surface-variant mb-space-sm leading-relaxed">
+          Авторская полупрозрачная янтарная фурнитура органических текучих форм для оверсайз-пиджаков из плотной шерсти.
+        </p>
+<!-- Project mood visual strip -->
+<div class="rounded-lg overflow-hidden h-32 w-full mb-space-sm relative border border-outline-variant/20">
+<img class="w-full h-full object-cover" data-alt="Aesthetic moodboard photo of modern sculptural photopolymer resin buttons and closures resting on heavy tailored woolen coat fabric, warm studio lighting with soft shadows, subtle Korean fashion design editorial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWhlyTFIacirhIvSq1B-qWu9O17VGm-VJtk2B82_83gFODxE88KxXLt_WziyM2GId8M1R0ERRUn4e_EjNtceD0P9aZ1w_CYYwvrfzwzoRdv43w_0HVImufAUNkN31TtqvpzWRSHe0UhM8w1uwL1NIwVxeJwOZ6Jr35KSsgw5EDC8ijg3PGvkaitNoH64hducuQfPPbbCXq5tae_yMJ8zbIgfisfAjhPuzUqiHN8c1Lnc5UkS9Vysc0jA"/>
+<div class="absolute bottom-2 left-2 bg-surface/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-label-sm font-label-sm text-primary flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>Статус: подготовка лукбука с Ксюшей</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-space-xs border-t border-surface-container">
+<div class="flex items-center gap-1 text-label-sm font-label-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]" data-icon="photo_camera">photo_camera</span>
+<span>Съемка в субботу</span>
+</div>
+<button class="text-label-md font-label-md text-primary font-semibold hover:underline flex items-center gap-0.5">
+            Детали дропа
+            <span class="material-symbols-outlined text-[14px]" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</section>
+<!-- Quick 3-min Reset CTA Button -->
+<section class="pt-space-xs pb-space-sm">
+<button class="w-full bg-primary-container hover:bg-primary text-on-primary font-title-md text-title-md py-3.5 px-space-lg rounded-full shadow-sm flex items-center justify-center gap-2 transition-all duration-200 active:scale-[0.985]">
+<span class="material-symbols-outlined text-[20px]" data-icon="self_improvement" style="font-variation-settings: 'FILL' 1;">self_improvement</span>
+<span>Перезагрузиться на 3 мин</span>
+</button>
+</section>
+</main>
+<!-- BottomNavBar (Shared Component JSON exact contract, active on 'Привычки') -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-space-xs py-space-xs shadow-md bg-surface rounded-t-lg">
+<!-- Tab 1: Сегодня -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-xs py-space-xs hover:bg-surface-container-low transition-colors duration-200 active:scale-[0.985]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="calendar_today">calendar_today</span>
+<span class="text-label-sm font-label-sm">Сегодня</span>
+</a>
+<!-- Tab 2: Школа -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-xs py-space-xs hover:bg-surface-container-low transition-colors duration-200 active:scale-[0.985]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="school">school</span>
+<span class="text-label-sm font-label-sm">Школа</span>
+</a>
+<!-- Tab 3: ЕГЭ -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-xs py-space-xs hover:bg-surface-container-low transition-colors duration-200 active:scale-[0.985]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="menu_book">menu_book</span>
+<span class="text-label-sm font-label-sm">ЕГЭ</span>
+</a>
+<!-- Tab 4: Привычки (ACTIVE ITEM per Semantic Intent of this Screen) -->
+<a class="flex flex-col items-center justify-center bg-primary-fixed text-on-primary-fixed rounded-full px-space-md py-space-xs font-label-sm active:scale-[0.985] transition-all duration-200 ease-out" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="spa" style="font-variation-settings: 'FILL' 1;">spa</span>
+<span class="text-label-sm font-label-sm">Привычки</span>
+</a>
+<!-- Tab 5: Майя -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-xs py-space-xs hover:bg-surface-container-low transition-colors duration-200 active:scale-[0.985]" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="support_agent">support_agent</span>
+<span class="text-label-sm font-label-sm">Майя</span>
+</a>
+</nav>
+</div>
+<script>
+    let waterCount = 5;
+    const maxGlasses = 7;
+
+    function addWater() {
+      if (waterCount < maxGlasses) {
+        waterCount++;
+        const counterEl = document.getElementById('water-counter');
+        counterEl.textContent = `${waterCount} из ${maxGlasses} стаканов`;
+
+        const glassesContainer = document.getElementById('glasses-container');
+        const emptyGlasses = glassesContainer.querySelectorAll('.border-dashed');
+        if (emptyGlasses.length > 0) {
+          const target = emptyGlasses[0];
+          target.className = "h-9 rounded-md bg-primary flex items-center justify-center text-on-primary text-xs shadow-xs transition-transform active:scale-95";
+          target.innerHTML = `<span class="material-symbols-outlined text-[18px]" data-icon="check">check</span>`;
+        }
+      }
+    }
+
+    function toggleHabit(button) {
+      const isChecked = button.classList.contains('bg-primary');
+      const textSpan = button.closest('article').querySelector('.strikethrough-transition');
+
+      if (isChecked) {
+        button.className = "mt-0.5 w-[22px] h-[22px] rounded-[6px] bg-surface-container border-[1.5px] border-outline-variant flex items-center justify-center text-transparent hover:border-primary transition-all flex-shrink-0";
+        if (textSpan) {
+          textSpan.classList.remove('line-through', 'opacity-50');
+        }
+      } else {
+        button.className = "mt-0.5 w-[22px] h-[22px] rounded-[6px] bg-primary flex items-center justify-center text-on-primary transition-all flex-shrink-0";
+        if (textSpan) {
+          textSpan.classList.add('line-through', 'opacity-50');
+        }
+      }
+    }
+  </script>
+</body></html>

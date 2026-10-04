@@ -1,0 +1,27 @@
+{
+  "name": "vibeplan",
+  "version": "0.1.0",
+  "private": true,
+  "description": "ВайбПлан / VibePlan — анти-выгорательный планировщик для старшеклассников, готовящихся к ЕГЭ. AI-наставник — Майя.",
+  "packageManager": "pnpm@10.15.0",
+  "scripts": {
+    "dev": "pnpm --filter @vibeplan/web dev",
+    "build": "pnpm --filter @vibeplan/web build",
+    "start": "pnpm --filter @vibeplan/web start",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:generate": "pnpm --filter @vibeplan/db generate",
+    "db:migrate": "pnpm --filter @vibeplan/db migrate",
+    "db:migrate:run": "pnpm --filter @vibeplan/db migrate:run",
+    "db:push": "pnpm --filter @vibeplan/db push",
+    "db:studio": "pnpm --filter @vibeplan/db studio",
+    "db:seed": "pnpm --filter @vibeplan/db seed"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "vitest": "^2.1.8",
+    "@vitest/coverage-v8": "^2.1.8"
+  }
+}

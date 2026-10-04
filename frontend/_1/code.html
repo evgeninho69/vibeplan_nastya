@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+
+<html lang="ru"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Coffee, Vanilla &amp; Matcha — ЕГЭ &amp; Учеба</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config verbatim from design system -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-primary": "#aecfa9",
+            "on-primary-container": "#c8eac2",
+            "surface": "#fcf9f4",
+            "on-secondary-fixed-variant": "#4a4167",
+            "secondary": "#625980",
+            "primary-fixed": "#c9ecc4",
+            "on-tertiary-fixed": "#261910",
+            "secondary-container": "#ddd0ff",
+            "secondary-fixed-dim": "#ccc0ee",
+            "on-primary": "#ffffff",
+            "on-primary-fixed": "#052108",
+            "on-secondary-container": "#61577f",
+            "surface-container-high": "#ebe8e3",
+            "tertiary-fixed-dim": "#dac2b4",
+            "on-surface": "#1c1c19",
+            "inverse-surface": "#31302d",
+            "tertiary": "#5a483e",
+            "surface-variant": "#e5e2dd",
+            "on-tertiary-fixed-variant": "#544339",
+            "tertiary-container": "#736054",
+            "tertiary-fixed": "#f7ddcf",
+            "on-tertiary-container": "#f6dcce",
+            "surface-tint": "#486646",
+            "surface-container-lowest": "#ffffff",
+            "background": "#fcf9f4",
+            "outline-variant": "#c3c8be",
+            "on-error": "#ffffff",
+            "on-primary-fixed-variant": "#314d30",
+            "primary-container": "#4d6b4b",
+            "surface-container": "#f0ede9",
+            "surface-dim": "#dcdad5",
+            "primary-fixed-dim": "#aecfa9",
+            "on-tertiary": "#ffffff",
+            "outline": "#737970",
+            "on-surface-variant": "#434841",
+            "primary": "#365335",
+            "surface-bright": "#fcf9f4",
+            "on-secondary": "#ffffff",
+            "error": "#ba1a1a",
+            "surface-container-low": "#f6f3ee",
+            "on-secondary-fixed": "#1e1539",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "secondary-fixed": "#e8ddff",
+            "inverse-on-surface": "#f3f0eb",
+            "surface-container-highest": "#e5e2dd",
+            "on-background": "#1c1c19"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-xl": "2.25rem",
+            "gutter-md": "1.5rem",
+            "space-xs": "0.25rem",
+            "gutter": "1rem",
+            "margin": "1rem",
+            "space-lg": "1.5rem",
+            "margin-md": "2rem"
+          },
+          "fontFamily": {
+            "body-md": ["Plus Jakarta Sans"],
+            "headline-xl": ["Plus Jakarta Sans"],
+            "title-md": ["Plus Jakarta Sans"],
+            "headline-xl-mobile": ["Plus Jakarta Sans"],
+            "label-sm": ["Plus Jakarta Sans"],
+            "title-lg": ["Plus Jakarta Sans"],
+            "headline-lg-mobile": ["Plus Jakarta Sans"],
+            "label-md": ["Plus Jakarta Sans"],
+            "headline-lg": ["Plus Jakarta Sans"],
+            "body-sm": ["Plus Jakarta Sans"],
+            "headline-md": ["Plus Jakarta Sans"],
+            "body-lg": ["Plus Jakarta Sans"]
+          },
+          "fontSize": {
+            "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }],
+            "headline-xl": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "title-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-xl-mobile": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-sm": ["11px", { "lineHeight": "14px", "letterSpacing": "0.02em", "fontWeight": "500" }],
+            "title-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.03em", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.015em", "fontWeight": "600" }],
+            "body-sm": ["13px", { "lineHeight": "18px", "fontWeight": "400" }],
+            "headline-md": ["22px", { "lineHeight": "30px", "fontWeight": "600" }],
+            "body-lg": ["16px", { "lineHeight": "26px", "fontWeight": "400" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      background-color: #fcf9f4;
+      color: #1c1c19;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background-color: #e5e2dd;
+      border-radius: 9999px;
+    }
+    .craft-card-shadow {
+      box-shadow: 0 4px 16px -2px rgba(61, 50, 42, 0.04), 0 1px 3px 0 rgba(61, 50, 42, 0.02);
+    }
+    .craft-popover-shadow {
+      box-shadow: 0 12px 32px -4px rgba(61, 50, 42, 0.08), 0 4px 10px -2px rgba(61, 50, 42, 0.03);
+    }
+    .washi-pattern {
+      background-image: radial-gradient(#dcdad5 0.75px, transparent 0.75px);
+      background-size: 12px 12px;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- ========================================================================= -->
+<!-- LEFT SIDEBAR: SideNavBar (Shared Component from JSON)                      -->
+<!-- ========================================================================= -->
+<aside class="fixed top-0 left-0 h-full w-64 p-space-md z-40 bg-surface-container-low border-r border-outline-variant/30 flex flex-col justify-between shrink-0 shadow-sm">
+<!-- Header / Brand -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center gap-3 px-2 py-1.5">
+<div class="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center text-primary shadow-xs">
+<span class="material-symbols-outlined text-2xl" data-icon="spa">spa</span>
+</div>
+<div>
+<h1 class="font-title-lg text-title-lg font-bold text-primary tracking-tight leading-none">Coffee, Vanilla &amp; Matcha</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">ЕГЭ Сафари • Спокойный фокус</p>
+</div>
+</div>
+<!-- CTA Button from JSON -->
+<button class="w-full py-3 px-4 rounded-full bg-primary-container text-on-primary font-title-md flex items-center justify-center gap-2 shadow-sm hover:opacity-95 active:scale-[0.985] transition-all">
+<span class="material-symbols-outlined text-xl" data-icon="add_circle">add_circle</span>
+<span>Добавить сессию</span>
+</button>
+<!-- Navigation Links from JSON (Exact match for active state: "ЕГЭ & Учеба") -->
+<nav class="flex flex-col gap-1 mt-2">
+<!-- 0: Сегодня -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-full text-on-surface-variant hover:bg-surface-container-high font-body-md transition-all active:scale-[0.985]" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="calendar_today">calendar_today</span>
+<span>Сегодня</span>
+</a>
+<!-- 1: Школа -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-full text-on-surface-variant hover:bg-surface-container-high font-body-md transition-all active:scale-[0.985]" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="school">school</span>
+<span>Школа</span>
+</a>
+<!-- 2: ЕГЭ & Учеба (ACTIVE ITEM: style_active_navigation) -->
+<a class="flex items-center justify-between px-4 py-3 rounded-full bg-primary-container text-on-primary-fixed font-title-md shadow-sm transition-all active:scale-[0.985]" href="#">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-xl" data-icon="menu_book">menu_book</span>
+<span class="text-on-primary">ЕГЭ &amp; Учеба</span>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md">68%</span>
+</a>
+<!-- 3: Привычки & Жизнь -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-full text-on-surface-variant hover:bg-surface-container-high font-body-md transition-all active:scale-[0.985]" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="spa">spa</span>
+<span>Привычки &amp; Жизнь</span>
+</a>
+<!-- 4: Комьюнити & Друзья -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-full text-on-surface-variant hover:bg-surface-container-high font-body-md transition-all active:scale-[0.985]" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="group">group</span>
+<span>Комьюнити &amp; Друзья</span>
+</a>
+<!-- 5: Профиль & ИИ -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-full text-on-surface-variant hover:bg-surface-container-high font-body-md transition-all active:scale-[0.985]" href="#">
+<span class="material-symbols-outlined text-xl" data-icon="smart_toy">smart_toy</span>
+<span>Профиль &amp; ИИ</span>
+</a>
+</nav>
+</div>
+<!-- AI Companion Widget & Footer Tabs -->
+<div class="flex flex-col gap-3">
+<!-- Maya AI Card -->
+<div class="p-3.5 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 craft-card-shadow relative overflow-hidden">
+<div class="flex items-center gap-2.5 mb-2">
+<div class="relative">
+<img class="w-8 h-8 rounded-full object-cover border border-primary-fixed" data-alt="Warm watercolor portrait avatar of Maya, a gentle empathetic AI study companion girl with cozy matcha green headband and friendly serene smile in soft natural morning sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkOOgnUJqw_NJfGMuKpZLPGd9lf5GBC6ksIrUoHsKyw5G1-sZ8pFNjY1wDMobRaVyjr0hLF8_5iFrILKlMoIDrXoQlzEPvnMkpbNoIIWyZMUeC8u6pKgxtL8Pb9rS2jCgCGcevfx2FzwDcbFMsFUOm-erKrDyu_owRDbRJPoZNCngCDc0MZX9c9he0DpqeiNtedBCtAOYU2qII-_jwMh9cc5z4dVswoU-zZ6oKusVlK0ErfD1SeQ183w"/>
+<span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-primary border-2 border-surface-container-lowest"></span>
+</div>
+<div>
+<h4 class="font-title-md text-body-md font-semibold text-on-surface leading-tight">Майя • ИИ тьютор</h4>
+<span class="font-label-sm text-label-sm text-primary flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span> На связи
+            </span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-snug">«Формулы планиметрии уже в памяти. Сделай глоток чая!»</p>
+</div>
+<!-- Footer navigation tabs from JSON -->
+<div class="flex items-center justify-between pt-2 border-t border-outline-variant/20 px-1">
+<a class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-1.5 px-2 rounded-full hover:bg-surface-container-high/60" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="settings">settings</span>
+<span>Настройки</span>
+</a>
+<a class="flex items-center gap-2 font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors py-1.5 px-2 rounded-full hover:bg-surface-container-high/60" href="#">
+<span class="material-symbols-outlined text-lg" data-icon="favorite">favorite</span>
+<span>Помощь</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- ========================================================================= -->
+<!-- MAIN LAYOUT WRAPPER                                                       -->
+<!-- ========================================================================= -->
+<div class="ml-64 flex-1 flex flex-col min-h-screen">
+<!-- ======================================================================= -->
+<!-- TOP NAV BAR: TopNavBar (Shared Component from JSON)                      -->
+<!-- ======================================================================= -->
+<header class="sticky top-0 z-30 flex items-center justify-between px-space-xl py-space-sm w-full bg-surface/80 backdrop-blur-md border-b border-outline-variant/20 shadow-xs">
+<!-- Left side: Status indicators & Day Vibe -->
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2 text-primary font-title-md">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container animate-pulse"></span>
+<span>Вайб дня: мягкий фокус</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="flex items-center gap-2 text-on-surface-variant font-body-md">
+<span class="material-symbols-outlined text-lg text-secondary" data-icon="hourglass_top">hourglass_top</span>
+<span>До экзаменов 214 дней</span>
+</div>
+<span class="text-outline-variant">•</span>
+<div class="text-on-surface-variant font-body-md">
+          Перерыв через 25 мин
+        </div>
+</div>
+<!-- Right side: Actions & Profile -->
+<div class="flex items-center gap-3">
+<!-- Voice Note button (trailing_secondary_action + mic icon) -->
+<button class="flex items-center gap-2 px-4 py-2 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-body-md transition-all active:scale-95">
+<span class="material-symbols-outlined text-lg text-tertiary" data-icon="mic">mic</span>
+<span>Голосовая заметка</span>
+</button>
+<!-- Primary Start Focus (trailing_primary_action) -->
+<button class="flex items-center gap-2 px-5 py-2 rounded-full bg-primary text-on-primary font-title-md text-body-md shadow-sm hover:opacity-95 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="play_arrow">play_arrow</span>
+<span>Начать фокус</span>
+</button>
+<!-- Notification Icon -->
+<button class="relative p-2 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Уведомления">
+<span class="material-symbols-outlined text-xl" data-icon="notifications">notifications</span>
+<span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-primary"></span>
+</button>
+<!-- Profile Avatar & Info -->
+<div class="flex items-center gap-2 pl-2 border-l border-outline-variant/30">
+<img class="w-9 h-9 rounded-full object-cover border border-outline-variant/40" data-alt="Warm watercolor avatar of high school senior student girl with soft pastel coffee tones and gentle mindful study aesthetics" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA31fWa10gOL4lOW3AKolV1OKRIU_DrX_zj_Lx8GM7VAI8NyWYShbkJphrXI-oqPl_1Ug3RPigVLdje8giZDNyPOy_-Q8He1mxn3U_Gi-UuvKUCKfdSKVo34LenLy77VBcyUjUfWsIdVt0nVzRvX2RZkT2C9m1BLq9j2C-5PYa0SFfgdLzBbYp7z87FT6uAt9l9E0wquSm79x9Teuf_ixWAYgTFEauT2-OfC-QJh7jzBwcz-EllBkrBLA"/>
+<div class="flex flex-col text-left">
+<span class="font-title-md text-body-sm font-semibold text-on-surface leading-tight">Аня Ларионова</span>
+<span class="font-label-sm text-label-sm text-secondary font-medium">11 «А» класс</span>
+</div>
+</div>
+</div>
+</header>
+<!-- ======================================================================= -->
+<!-- MAIN CONTENT CANVAS: ЕГЭ & Учеба                                         -->
+<!-- ======================================================================= -->
+<main class="flex-1 px-space-xl py-space-lg max-w-[1400px] w-full mx-auto">
+<!-- 1. Header Banner of the section -->
+<section class="mb-space-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<div class="flex items-center gap-3 mb-2">
+<span class="px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-md text-label-md flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm" data-icon="verified">verified</span>
+                Кодификатор ФИПИ 2025 актуален
+              </span>
+<span class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm" data-icon="flag">flag</span>
+                Цель: 85+ баллов
+              </span>
+<span class="px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md flex items-center gap-1.5">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+                Без выгорания • 1.5ч в день
+              </span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-bold text-on-surface tracking-tight flex items-center gap-2">
+              ЕГЭ &amp; Учеба <span class="text-2xl">📚</span>
+</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-1">
+              Спокойное освоение кодификатора ФИПИ, синхронизация с онлайн-школами и мягкий фокус без чувства вины.
+            </p>
+</div>
+<!-- Quick Stat Capsule -->
+<div class="flex items-center gap-4 p-3 px-5 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 craft-card-shadow">
+<div class="text-center">
+<div class="font-headline-md text-headline-md font-bold text-primary leading-tight">68/94</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Темы закрыты</div>
+</div>
+<div class="w-px h-8 bg-outline-variant/30"></div>
+<div class="text-center">
+<div class="font-headline-md text-headline-md font-bold text-secondary leading-tight">78</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Балл на пробнике</div>
+</div>
+<div class="w-px h-8 bg-outline-variant/30"></div>
+<div class="text-center">
+<div class="font-headline-md text-headline-md font-bold text-primary leading-tight">100%</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Регулярность</div>
+</div>
+</div>
+</div>
+<!-- 2. Subject Tabs / Chips Selector -->
+<div class="mt-6 flex flex-wrap items-center gap-3">
+<!-- Active Subject: Профильная математика -->
+<button class="flex items-center gap-3 px-5 py-2.5 rounded-full bg-primary-container text-on-primary font-title-md text-body-md shadow-sm transition-all active:scale-[0.985]">
+<span class="material-symbols-outlined text-lg" data-icon="calculate">calculate</span>
+<span>Профильная математика</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-md text-label-md">64% • 21/33 тем</span>
+</button>
+<!-- Subject: Русский язык -->
+<button class="flex items-center gap-3 px-5 py-2.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-body-md border border-outline-variant/20 transition-all active:scale-[0.985]">
+<span class="material-symbols-outlined text-lg text-secondary" data-icon="edit_note">edit_note</span>
+<span>Русский язык</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-container/60 text-on-secondary-container font-label-md text-label-md">82% • 28/34 тем</span>
+</button>
+<!-- Subject: Информатика / КЕГЭ -->
+<button class="flex items-center gap-3 px-5 py-2.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-body-md border border-outline-variant/20 transition-all active:scale-[0.985]">
+<span class="material-symbols-outlined text-lg text-tertiary" data-icon="terminal">terminal</span>
+<span>Информатика / КЕГЭ</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-md text-label-md">71% • 19/27 тем</span>
+</button>
+<!-- Add Subject Button -->
+<button class="flex items-center gap-1.5 px-4 py-2.5 rounded-full border border-dashed border-outline hover:border-primary text-on-surface-variant hover:text-primary font-title-md text-body-md transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+<span>Добавить предмет</span>
+</button>
+</div>
+</section>
+<!-- Bento Grid Layout: 8 cols main + 4 cols sidebar -->
+<div class="grid grid-cols-12 gap-space-lg items-start">
+<!-- =================================================================== -->
+<!-- LEFT COLUMN: Codifier Modules + Online School Sync (Col-8)          -->
+<!-- =================================================================== -->
+<div class="col-span-12 lg:col-span-8 flex flex-col gap-space-lg">
+<!-- 4. Smart Online School Integration Card (Top of left col) -->
+<div class="p- space-lg p-6 rounded-3xl bg-surface-container-lowest border border-outline-variant/30 craft-card-shadow relative overflow-hidden washi-pattern">
+<div class="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2 text-primary font-title-md mb-1">
+<span class="material-symbols-outlined text-xl" data-icon="hub">hub</span>
+<span>Умный импорт программы онлайн-школ</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-lg">
+                  Синхронизировано: <strong class="text-on-surface">3 вебинара</strong> на этой неделе аккуратно распределены без наложений на школьные звонки и личный отдых.
+                </p>
+<div class="flex items-center gap-2 mt-3">
+<span class="px-2.5 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary"></span> Умскул (Мастер-группа)
+                  </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-secondary"></span> 100балльный репетитор
+                  </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface">
+                    Фоксфорд
+                  </span>
+</div>
+</div>
+<div class="flex items-center gap-2.5 shrink-0">
+<button class="px-4 py-2.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-body-sm flex items-center gap-2 transition-all active:scale-[0.985] border border-outline-variant/30">
+<span class="material-symbols-outlined text-lg" data-icon="sync">sync</span>
+<span>Обновить</span>
+</button>
+<button class="px-4 py-2.5 rounded-full bg-primary-container text-on-primary font-title-md text-body-sm flex items-center gap-2 shadow-xs hover:opacity-95 transition-all active:scale-[0.985]">
+<span class="material-symbols-outlined text-lg" data-icon="upload_file">upload_file</span>
+<span>Загрузить скрипт / ДЗ</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 3. Interactive Codifier Tracker Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<h3 class="font-headline-md text-headline-md font-bold text-on-surface">Трекер Кодификатора ФИПИ</h3>
+<span class="px-3 py-1 rounded-full bg-surface-container-high font-label-md text-label-md text-on-surface-variant">
+                Профильная математика 2025
+              </span>
+</div>
+<div class="flex items-center gap-2">
+<button class="text-on-surface-variant hover:text-primary p-1.5 rounded-full hover:bg-surface-container transition-colors" title="Свернуть все">
+<span class="material-symbols-outlined text-xl" data-icon="unfold_less">unfold_less</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary p-1.5 rounded-full hover:bg-surface-container transition-colors" title="Фильтр тем">
+<span class="material-symbols-outlined text-xl" data-icon="filter_list">filter_list</span>
+</button>
+</div>
+</div>
+<!-- MODULE 1: Планиметрия и геометрия -->
+<div class="p-6 rounded-3xl bg-surface-container-lowest border border-outline-variant/30 craft-card-shadow flex flex-col gap-4">
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-3 border-b border-outline-variant/20 gap-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-2xl" data-icon="square_foot">square_foot</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-title-lg text-title-lg font-bold text-on-surface">Модуль 1: Планиметрия и геометрия</h4>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm">Задания №1, №16</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Свойства фигур, углы, окружности, леммы высшей геометрии</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md font-bold text-primary">75% закрыто</span>
+<div class="w-28 h-2 rounded-full bg-surface-container overflow-hidden mt-1">
+<div class="h-full bg-primary rounded-full" style="width: 75%;"></div>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Module 1 Topics List -->
+<div class="flex flex-col gap-3">
+<!-- Topic 1: Completed -->
+<div class="p-4 rounded-2xl bg-surface-container-low/60 border border-outline-variant/20 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-surface-container-low transition-colors">
+<div class="flex items-start gap-3">
+<!-- Custom Matcha Checkbox -->
+<div class="w-6 h-6 rounded-md bg-primary-container flex items-center justify-center text-on-primary shrink-0 mt-0.5 shadow-xs">
+<span class="material-symbols-outlined text-sm font-bold" data-icon="check">check</span>
+</div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-title-md text-body-md font-semibold text-on-surface line-through opacity-75">Вписанные и описанные окружности</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">Закрыто</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">ФИПИ первичный балл: 2-3</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Конспект загружен • 14 типовых задач решено без ошибок</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-center">
+<button class="px-3 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface hover:text-primary font-label-md text-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="description">description</span>
+<span>Конспект (PDF)</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface hover:text-secondary font-label-md text-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-sm text-secondary" data-icon="style">style</span>
+<span>Anki (18)</span>
+</button>
+</div>
+</div>
+<!-- Topic 2: In Progress -->
+<div class="p-4 rounded-2xl bg-surface-container-lowest border-2 border-primary-fixed/80 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
+<div class="flex items-start gap-3">
+<!-- Custom Vanilla/Matcha in-progress box -->
+<div class="w-6 h-6 rounded-md border-2 border-primary bg-primary-fixed/40 flex items-center justify-center text-primary shrink-0 mt-0.5">
+<div class="w-2.5 h-2.5 rounded-xs bg-primary"></div>
+</div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-title-md text-body-md font-semibold text-on-surface">Теорема Менелая и Чевы</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">В процессе</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm">Умскул • Вебинар в чт</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Отношения отрезков в секущих прямых. Домашка: 4 из 8 номеров</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-center">
+<button class="px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center gap-1.5 hover:opacity-95 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="play_circle">play_circle</span>
+<span>Продолжить</span>
+</button>
+</div>
+</div>
+<!-- Topic 3: Planned -->
+<div class="p-4 rounded-2xl bg-surface-container-low/40 border border-outline-variant/20 flex flex-col sm:flex-row sm:items-center justify-between gap-3 opacity-90">
+<div class="flex items-start gap-3">
+<!-- Custom Unchecked Box -->
+<div class="w-6 h-6 rounded-md border-1.5 border-outline/40 bg-surface-container-lowest shrink-0 mt-0.5"></div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-title-md text-body-md font-medium text-on-surface">Лемма о трезубце и подобие треугольников</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Запланировано</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">ФИПИ балл: 3</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Сложная геометрия второй части (№16б). Запланировано на субботу</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-center">
+<button class="px-3 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_add_on">calendar_add_on</span>
+<span>В расписание</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- MODULE 2: Уравнения и неравенства -->
+<div class="p-6 rounded-3xl bg-surface-container-lowest border border-outline-variant/30 craft-card-shadow flex flex-col gap-4">
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-3 border-b border-outline-variant/20 gap-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-2xl" data-icon="functions">functions</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-title-lg text-title-lg font-bold text-on-surface">Модуль 2: Уравнения и неравенства</h4>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm">Задания №5, №12, №14, №17</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Джентльменский набор баллов: показательные, логарифмы, тригонометрия, финансы</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md font-bold text-primary">83% закрыто</span>
+<div class="w-28 h-2 rounded-full bg-surface-container overflow-hidden mt-1">
+<div class="h-full bg-primary rounded-full" style="width: 83%;"></div>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Module 2 Topics List -->
+<div class="flex flex-col gap-3">
+<!-- Item 1: 100% -->
+<div class="p-4 rounded-2xl bg-surface-container-low/60 border border-outline-variant/20 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-6 h-6 rounded-md bg-primary-container flex items-center justify-center text-on-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-sm font-bold" data-icon="check">check</span>
+</div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-title-md text-body-md font-semibold text-on-surface line-through opacity-75">Логарифмические и показательные неравенства (метод рационализации)</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">Закрыто 100%</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Теория ОДЗ, метод замены множителей. Пройдено в «100балльном»</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-center">
+<button class="px-3 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface hover:text-primary font-label-md text-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="folder_zip">folder_zip</span>
+<span>Банк задач (24)</span>
+</button>
+</div>
+</div>
+<!-- Item 2: 100% -->
+<div class="p-4 rounded-2xl bg-surface-container-low/60 border border-outline-variant/20 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-6 h-6 rounded-md bg-primary-container flex items-center justify-center text-on-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-sm font-bold" data-icon="check">check</span>
+</div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-title-md text-body-md font-semibold text-on-surface line-through opacity-75">Тригонометрические уравнения с отбором корней</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">Закрыто 100%</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Отбор через тригонометрическую окружность и двойные неравенства</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-center">
+<button class="px-3 py-1.5 rounded-full bg-surface-container-lowest border border-outline-variant/30 text-on-surface hover:text-primary font-label-md text-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="auto_stories">auto_stories</span>
+<span>Формульник</span>
+</button>
+</div>
+</div>
+<!-- Item 3: In progress 50% -->
+<div class="p-4 rounded-2xl bg-surface-container-lowest border border-outline-variant/30 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+<div class="flex items-start gap-3">
+<div class="w-6 h-6 rounded-md border-2 border-secondary bg-secondary-fixed/50 flex items-center justify-center text-secondary shrink-0 mt-0.5">
+<div class="w-2.5 h-2.5 rounded-xs bg-secondary"></div>
+</div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-title-md text-body-md font-semibold text-on-surface">Экономическая задача и финансовая математика</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm">Изучено 50%</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Задание №17</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Дифференцированные и аннуитетные платежи. Табличный метод</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-center">
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-label-md text-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="play_arrow">play_arrow</span>
+<span>Пройти 2 задачи</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- MODULE 3: Параметры и теория чисел -->
+<div class="p-6 rounded-3xl bg-surface-container-lowest border border-outline-variant/30 craft-card-shadow flex flex-col gap-4">
+<div class="flex flex-col md:flex-row md:items-center justify-between pb-3 border-b border-outline-variant/20 gap-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-2xl bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-2xl" data-icon="shapes">shapes</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-title-lg text-title-lg font-bold text-on-surface">Модуль 3: Параметры и теория чисел</h4>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm">Задания №18, №19</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Высший эшелон баллов (90+): олимпиадная логика и графические методы</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex flex-col items-end">
+<span class="font-label-md text-label-md font-bold text-tertiary">35% закрыто</span>
+<div class="w-28 h-2 rounded-full bg-surface-container overflow-hidden mt-1">
+<div class="h-full bg-tertiary rounded-full" style="width: 35%;"></div>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="expand_more">expand_more</span>
+</div>
+</div>
+<!-- Module 3 Topics List -->
+<div class="flex flex-col gap-3">
+<!-- Item 1: This week focus -->
+<div class="p-4 rounded-2xl bg-surface-container-lowest border-2 border-primary-container/40 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-xs">
+<div class="flex items-start gap-3">
+<div class="w-6 h-6 rounded-md border-2 border-primary bg-primary-fixed/40 flex items-center justify-center text-primary shrink-0 mt-0.5">
+<div class="w-2.5 h-2.5 rounded-xs bg-primary"></div>
+</div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-title-md text-body-md font-semibold text-on-surface">Графический метод решения задач с параметром (плоскость X-A)</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">В фокусе этой недели</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">№18 • 4 перв. балла</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Движение прямых, пучки окружностей и касание графиков</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-center">
+<button class="px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary font-label-md text-label-md flex items-center gap-1.5 hover:opacity-95 transition-all">
+<span class="material-symbols-outlined text-sm" data-icon="play_circle">play_circle</span>
+<span>Разбор 3 задач</span>
+</button>
+</div>
+</div>
+<!-- Item 2: Planned -->
+<div class="p-4 rounded-2xl bg-surface-container-low/40 border border-outline-variant/20 flex flex-col sm:flex-row sm:items-center justify-between gap-3 opacity-90">
+<div class="flex items-start gap-3">
+<div class="w-6 h-6 rounded-md border-1.5 border-outline/40 bg-surface-container-lowest shrink-0 mt-0.5"></div>
+<div>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="font-title-md text-body-md font-medium text-on-surface">Делимость, остатки и свойства чисел</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm">Запланировано на ноябрь</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">Задание №19</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Оценка плюс пример, метод математической индукции</p>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end sm:self-center">
+<button class="px-3 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant font-label-md text-label-md flex items-center gap-1.5 transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="event">event</span>
+<span>Напоминание</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- =================================================================== -->
+<!-- RIGHT COLUMN: Analytical Sidebar (Col-4)                           -->
+<!-- =================================================================== -->
+<aside class="col-span-12 lg:col-span-4 flex flex-col gap-space-lg">
+<!-- 5.1 Widget: Score Forecast based on practice tests -->
+<div class="p-6 rounded-3xl bg-surface-container-lowest border border-outline-variant/30 craft-card-shadow flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="trending_up">trending_up</span>
+<h4 class="font-title-lg text-title-lg font-bold text-on-surface">Прогноз баллов</h4>
+</div>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+                +14 с сентября
+              </span>
+</div>
+<!-- Score Visualizer Bar -->
+<div class="p-4 rounded-2xl bg-surface-container-low border border-outline-variant/20 flex flex-col gap-3">
+<div class="flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant font-body-sm">Текущий пробник:</span>
+<span class="font-bold text-on-surface font-title-md">78 баллов</span>
+</div>
+<!-- Gradient Track with pin indicator -->
+<div class="relative w-full h-3 bg-surface-container-high rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary to-inverse-primary rounded-full transition-all duration-500" style="width: 78%;"></div>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Базовый (56)</span>
+<span class="text-primary font-bold">Текущий (78)</span>
+<span class="text-secondary font-bold">Цель (88)</span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Стабильное решение блока №1–№12 дает 66 баллов. Закрепив №14 и №17, ты уверенно гарантируешь 84+.
+            </p>
+<button class="w-full py-2.5 rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface font-title-md text-body-sm flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined text-lg text-secondary" data-icon="history_edu">history_edu</span>
+<span>История пробных тестов (4)</span>
+</button>
+</div>
+<!-- 5.2 Widget: Gentle Focus Sprint Timer (25/5 + Lo-Fi Coffee/Matcha) -->
+<div class="p-6 rounded-3xl bg-surface-container-lowest border border-outline-variant/30 craft-card-shadow relative overflow-hidden">
+<div class="flex items-center justify-between mb-3">
+<div class="flex items-center gap-2 text-on-surface font-title-lg font-bold">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="timer">timer</span>
+<h4>Мягкий спринт фокуса</h4>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+                Режим 25 / 5
+              </span>
+</div>
+<!-- Timer Display -->
+<div class="my-3 p-5 rounded-2xl bg-surface text-center border border-outline-variant/30 relative">
+<div class="font-headline-xl text-headline-xl font-bold text-on-surface tracking-tight">25:00</div>
+<div class="font-body-sm text-body-sm text-on-surface-variant flex items-center justify-center gap-2 mt-1">
+<span class="material-symbols-outlined text-base text-tertiary" data-icon="coffee">coffee</span>
+<span>Фон: Лоу-фай «Кофе &amp; Матча»</span>
+</div>
+</div>
+<!-- Session Goal & Quick Actions -->
+<div class="flex flex-col gap-2.5">
+<div class="p-2.5 px-3.5 rounded-xl bg-surface-container-low text-body-sm text-on-surface flex items-center justify-between">
+<span class="font-body-sm text-on-surface-variant">Задача спринта:</span>
+<span class="font-semibold text-primary">Повторение формул №12</span>
+</div>
+<button class="w-full py-3 rounded-full bg-primary-container text-on-primary font-title-md text-body-md flex items-center justify-center gap-2 shadow-sm hover:opacity-95 active:scale-95 transition-all">
+<span class="material-symbols-outlined text-xl" data-icon="play_arrow">play_arrow</span>
+<span>Запустить сессию фокуса</span>
+</button>
+</div>
+</div>
+<!-- 5.3 Widget: Weak Spots Under Maya's Protection -->
+<div class="p-6 rounded-3xl bg-surface-container-lowest border border-outline-variant/30 craft-card-shadow flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2 text-on-surface font-title-lg font-bold">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="security">security</span>
+<h4>Слабые места под защитой</h4>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed-variant font-label-sm text-label-sm">Майя ИИ</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              2 темы с частыми мелкими вычислительными ошибками в последних пробниках:
+            </p>
+<!-- Weak items list -->
+<div class="flex flex-col gap-2.5">
+<div class="p-3 rounded-2xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-between">
+<div>
+<h5 class="font-title-md text-body-sm font-semibold text-on-surface">Знаки производной в задании №8</h5>
+<p class="font-label-sm text-label-sm text-error/80">3 ошибки в точках максимума</p>
+</div>
+<button class="px-3 py-1 rounded-full bg-surface-container-lowest border border-outline-variant/30 hover:border-primary text-primary font-label-md text-label-md">
+                  Мини-квиз
+                </button>
+</div>
+<div class="p-3 rounded-2xl bg-surface-container-low/70 border border-outline-variant/20 flex items-center justify-between">
+<div>
+<h5 class="font-title-md text-body-sm font-semibold text-on-surface">Учет ОДЗ при логарифмах №14</h5>
+<p class="font-label-sm text-label-sm text-error/80">Потеря интервала основания</p>
+</div>
+<button class="px-3 py-1 rounded-full bg-surface-container-lowest border border-outline-variant/30 hover:border-primary text-primary font-label-md text-label-md">
+                  3 задачи
+                </button>
+</div>
+</div>
+<!-- Quiz CTA -->
+<button class="mt-1 w-full py-2.5 rounded-full bg-secondary-fixed hover:bg-secondary-fixed-dim text-on-secondary-fixed font-title-md text-body-sm flex items-center justify-center gap-2 transition-all">
+<span class="material-symbols-outlined text-lg" data-icon="psychology">psychology</span>
+<span>Решить быстрый квиз (5 минут)</span>
+</button>
+</div>
+<!-- 5.4 Caring Quote from Maya (Cozy Note card) -->
+<div class="p-5 rounded-3xl bg-surface-container-low border border-outline-variant/20 relative overflow-hidden">
+<div class="absolute -top-3 -right-3 text-primary/10">
+<span class="material-symbols-outlined text-8xl" data-icon="format_quote">format_quote</span>
+</div>
+<div class="relative z-10 flex items-start gap-3">
+<img class="w-10 h-10 rounded-full object-cover shrink-0 border border-primary/30" data-alt="Close up warm tender portrait illustration of cute watercolor tea leaf avatar with soft natural palette and calm atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRTvwnLiS3r_QKpPAROw5OoFuf4uq2rA1PqL-ZHT2gimyP-8NknIkkVbjztMFi0mY4FgLak8EPEEWbIa3nXx4ezaF9UZ958-c6jd1V-cGVdKKHKCHMN_ktrQ9kHuC1jjKS5mS4nK2Mm1H_HEcCrPq5i8d9EG93uhjhAESeegkw9orcfPMcNsALgugP9SYmQX59ZY57t0z7LxdEhgvQtztUCRNRvA4fFLVTFbfz4hnPB-1QbcLV_RjQKQ"/>
+<div>
+<span class="font-label-sm text-label-sm font-bold text-primary tracking-wide uppercase">Слово заботы от Майи</span>
+<p class="font-body-md text-body-md text-on-surface mt-1 italic">
+                  «Ты уже закрыла 64% всего объема профиля. Не торопись и пей воду, прогресс уже работает на тебя 🍵»
+                </p>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+</div>
+</body></html>

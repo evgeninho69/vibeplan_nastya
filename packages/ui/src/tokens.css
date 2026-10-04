@@ -1,0 +1,199 @@
+/* VibePlan design tokens — портировано из frontend/warm_paper_stationary_planner/DESIGN.md.
+   Material 3-inspired палитра "Warm Paper Stationery". */
+
+:root {
+  /* Surface */
+  --surface: #fcf9f4;
+  --surface-dim: #dcdad5;
+  --surface-bright: #fcf9f4;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f6f3ee;
+  --surface-container: #f0ede9;
+  --surface-container-high: #ebe8e3;
+  --surface-container-highest: #e5e2dd;
+  --surface-variant: #e5e2dd;
+
+  /* On-surface */
+  --on-surface: #1c1c19;
+  --on-surface-variant: #434841;
+
+  /* Inverse */
+  --inverse-surface: #31302d;
+  --inverse-on-surface: #f3f0eb;
+
+  /* Outline */
+  --outline: #737970;
+  --outline-variant: #c3c8be;
+
+  /* Surface tint */
+  --surface-tint: #486646;
+
+  /* Primary — matcha deep */
+  --primary: #365335;
+  --primary-50: #f5f7f4;
+  --primary-100: #e1e9df;
+  --primary-200: #c8eac2;
+  --primary-300: #aecfa9;
+  --primary-400: #7a9a78;
+  --primary-500: #4d6b4b;
+  --primary-600: #365335;
+  --primary-700: #314d30;
+  --primary-800: #052108;
+  --on-primary: #ffffff;
+  --primary-container: #4d6b4b;
+  --on-primary-container: #c8eac2;
+  --primary-fixed: #c9ecc4;
+  --primary-fixed-dim: #aecfa9;
+  --on-primary-fixed: #052108;
+  --on-primary-fixed-variant: #314d30;
+  --inverse-primary: #aecfa9;
+  --primary-hover: #3f583d;
+  --primary-track: #d8e6d7;
+
+  /* Secondary — lo-fi dusk / lavender */
+  --secondary: #625980;
+  --secondary-50: #f4f2f8;
+  --secondary-100: #eae5f5;
+  --secondary-200: #ddd0ff;
+  --secondary-300: #ccc0ee;
+  --secondary-400: #a79dc4;
+  --secondary-500: #685e86;
+  --on-secondary: #ffffff;
+  --secondary-container: #ddd0ff;
+  --on-secondary-container: #61577f;
+  --secondary-fixed: #e8ddff;
+  --secondary-fixed-dim: #ccc0ee;
+  --on-secondary-fixed: #1e1539;
+  --on-secondary-fixed-variant: #4a4167;
+  --secondary-hover: #564d70;
+
+  /* Tertiary — espresso / roasted bean */
+  --tertiary: #5a483e;
+  --tertiary-100: #f7ddcf;
+  --tertiary-200: #dac2b4;
+  --tertiary-300: #736054;
+  --tertiary-500: #5a483e;
+  --tertiary-600: #614f44;
+  --tertiary-700: #544339;
+  --on-tertiary: #ffffff;
+  --tertiary-container: #736054;
+  --on-tertiary-container: #f6dcce;
+  --tertiary-fixed: #f7ddcf;
+  --tertiary-fixed-dim: #dac2b4;
+  --on-tertiary-fixed: #261910;
+  --on-tertiary-fixed-variant: #544339;
+
+  /* Error */
+  --error: #ba1a1a;
+  --on-error: #ffffff;
+  --error-container: #ffdad6;
+  --on-error-container: #93000a;
+
+  /* Background / canvas */
+  --background: #fcf9f4;
+  --on-background: #1c1c19;
+
+  /* Typography — Plus Jakarta Sans */
+  --font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  --text-headline-xl-size: 40px;
+  --text-headline-xl-lh: 48px;
+  --text-headline-xl-tracking: -0.02em;
+  --text-headline-xl-mobile-size: 30px;
+  --text-headline-xl-mobile-lh: 38px;
+  --text-headline-lg-size: 32px;
+  --text-headline-lg-lh: 40px;
+  --text-headline-lg-tracking: -0.015em;
+  --text-headline-md-size: 22px;
+  --text-headline-md-lh: 30px;
+  --text-title-lg-size: 18px;
+  --text-title-lg-lh: 26px;
+  --text-title-md-size: 16px;
+  --text-title-md-lh: 24px;
+  --text-body-lg-size: 16px;
+  --text-body-lg-lh: 26px;
+  --text-body-md-size: 14px;
+  --text-body-md-lh: 22px;
+  --text-body-sm-size: 13px;
+  --text-body-sm-lh: 18px;
+  --text-label-md-size: 12px;
+  --text-label-md-lh: 16px;
+  --text-label-md-tracking: 0.03em;
+  --text-label-sm-size: 11px;
+  --text-label-sm-lh: 14px;
+  --text-label-sm-tracking: 0.02em;
+
+  /* Radii */
+  --radius-sm: 0.5rem;
+  --radius: 1rem;
+  --radius-md: 1.5rem;
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
+  --radius-full: 9999px;
+
+  /* Spacing */
+  --gutter: 1rem;
+  --gutter-md: 1.5rem;
+  --margin: 1rem;
+  --margin-md: 2rem;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2.25rem;
+
+  /* Elevation */
+  --shadow-0: none;
+  --shadow-1: 0 4px 16px -2px rgba(61, 50, 42, 0.04), 0 1px 3px 0 rgba(61, 50, 42, 0.02);
+  --shadow-2: 0 12px 32px -4px rgba(61, 50, 42, 0.08), 0 4px 10px -2px rgba(61, 50, 42, 0.03);
+  --shadow-press: 0 1px 4px -1px rgba(61, 50, 42, 0.04);
+  --border-paper: 1px solid rgba(61, 50, 42, 0.06);
+  --border-paper-strong: 1px solid rgba(61, 50, 42, 0.1);
+
+  /* Focus ring */
+  --focus-ring: 0 0 0 3px rgba(77, 107, 75, 0.25);
+
+  /* Container */
+  --max-width: 1240px;
+  --min-touch: 44px;
+}
+
+/* Альтернативные темы (в мокапе показаны как опции). По умолчанию активна matcha. */
+[data-theme="matcha"] {
+  --primary: #4d6b4b;
+  --primary-container: #4d6b4b;
+  --on-primary-container: #c8eac2;
+  --surface-tint: #486646;
+  --primary-track: #d8e6d7;
+}
+[data-theme="lavender"] {
+  --primary: #685e86;
+  --primary-container: #685e86;
+  --on-primary-container: #ddd0ff;
+  --surface-tint: #685e86;
+  --primary-track: #eae5f5;
+  --secondary: #685e86;
+}
+[data-theme="coffee"] {
+  --primary: #614f44;
+  --primary-container: #614f44;
+  --on-primary-container: #f7ddcf;
+  --surface-tint: #614f44;
+  --primary-track: #efe8dc;
+  --secondary: #5a483e;
+}
+[data-theme="rose"] {
+  --primary: #a85070;
+  --primary-container: #a85070;
+  --on-primary-container: #f9d8e3;
+  --surface-tint: #a85070;
+  --primary-track: #f9d8e3;
+  --secondary: #a85070;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms;
+    --transition: 0ms;
+  }
+}

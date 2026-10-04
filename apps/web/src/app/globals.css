@@ -1,0 +1,101 @@
+@import "tailwindcss";
+@import "@vibeplan/ui/styles.css";
+
+@theme {
+  --color-surface: var(--surface);
+  --color-primary-50: var(--primary-50);
+  --color-primary-100: var(--primary-100);
+  --color-primary-200: var(--primary-200);
+  --color-primary-300: var(--primary-300);
+  --color-primary-400: var(--primary-400);
+  --color-primary-500: var(--primary-500);
+  --color-primary-600: var(--primary-600);
+  --color-primary-700: var(--primary-700);
+  --color-secondary-100: var(--secondary-100);
+  --color-secondary-200: var(--secondary-200);
+  --color-secondary-300: var(--secondary-300);
+  --color-secondary-400: var(--secondary-400);
+  --color-secondary-500: var(--secondary-500);
+  --color-tertiary-100: var(--tertiary-100);
+  --color-tertiary-200: var(--tertiary-200);
+  --color-tertiary-300: var(--tertiary-300);
+  --color-tertiary-500: var(--tertiary-500);
+  --color-tertiary-600: var(--tertiary-600);
+  --color-tertiary-700: var(--tertiary-700);
+}
+
+html, body {
+  background: var(--background);
+  color: var(--on-surface);
+  min-height: 100dvh;
+}
+
+/* Util-классы, повторяющие хвосты из Tailwind-мокапов. */
+@layer utilities {
+  .vp-glow {
+    box-shadow:
+      0 0 0 1px rgba(77, 107, 75, 0.18),
+      0 12px 32px -4px rgba(61, 50, 42, 0.08);
+  }
+  /* Скрыто визуально, но доступно для скринридеров и поиска. */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+  .vp-grid-paper {
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(61, 50, 42, 0.06) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+  .vp-shadow-press {
+    box-shadow: var(--shadow-press);
+  }
+  .vp-rise {
+    animation: vp-rise 220ms ease-out both;
+  }
+  .vp-fade {
+    animation: vp-fade 160ms ease-out both;
+  }
+  .vp-stagger > * { animation: vp-rise 220ms ease-out both; }
+  .vp-stagger > *:nth-child(1) { animation-delay: 0ms; }
+  .vp-stagger > *:nth-child(2) { animation-delay: 50ms; }
+  .vp-stagger > *:nth-child(3) { animation-delay: 100ms; }
+  .vp-stagger > *:nth-child(4) { animation-delay: 150ms; }
+  .vp-stagger > *:nth-child(5) { animation-delay: 200ms; }
+  .vp-stagger > *:nth-child(6) { animation-delay: 250ms; }
+}
+
+@keyframes vp-rise {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes vp-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vp-rise, .vp-fade, .vp-stagger > * {
+    animation: none !important;
+  }
+  .vp-press:active:not(:disabled) { transform: none !important; }
+}
+
+/* Печатный фокус-кольцо для всего. */
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(77, 107, 75, 0.25);
+  border-radius: var(--radius-sm);
+}
+
+/* Печатный target-size 44×44 px для кнопок с иконками. */
+button:not([class*="size-"]) {
+  min-height: 36px;
+}
