@@ -21,7 +21,8 @@ COPY packages ./packages
 COPY apps ./apps
 
 # Prune dev deps для прод-сборки.
-RUN pnpm --filter @vibeplan/web --prod deploy /tmp/vibeplan-pruned
+# (Закомментировано: pnpm --prod deploy ломается на workspace-протоколе)
+# RUN pnpm --filter @vibeplan/web --prod deploy /tmp/vibeplan-pruned
 
 # Build.
 ENV NEXT_TELEMETRY_DISABLED=1
@@ -31,4 +32,6 @@ EXPOSE 3000
 ENV NODE_ENV=production
 ENV PORT=3000
 ENV HOSTNAME=0.0.0.0
+# Запасной вариант: build на лету в CMD (если Dokploy игнорирует RUN)
+# CMD ["sh", "-c", "cd /app/apps/web && pnpm exec next build && pnpm --filter @vibeplan/web start"]
 CMD ["pnpm", "--filter", "@vibeplan/web", "start"]
