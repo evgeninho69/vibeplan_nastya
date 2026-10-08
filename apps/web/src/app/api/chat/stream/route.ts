@@ -3,8 +3,9 @@ import { getProfile, listMemoryAnchors, getTodaySchedule, TODAY, appendChatMessa
 
 /**
  * Сервер-сен-эвенты стрим для чата Майи.
- * - stub: пишет canned-фразу по кусочкам (имитация стриминга).
- * - openrouter (OPENROUTER_API_KEY задан): стримит claude-3.5-sonnet посимвольно.
+ * - stub: пишет canned-фразу по кусочкам.
+ * - openrouter (OPENROUTER_API_KEY задан): стримит claude-3.5-sonnet.
+ * - google (GOOGLE_API_KEY задан): стримит gemini-2.5-flash.
  */
 export async function POST(req: NextRequest) {
   let body: { content?: string };
@@ -25,61 +26,99 @@ export async function POST(req: NextRequest) {
 
   await appendChatMessage(userId, "user", content);
 
-  const mode = process.env.OPENROUTER_API_KEY ? "openrouter" : "stub";
+  type Mode = "stub" | "google" | "openrouter";
+  const mode: Mode = process.env.GOOGLE_API_KEY
+    ? "google"
+    : process.env.OPENROUTER_API_KEY
+      ? "openrouter"
+      : "stub";
   const encoder = new TextEncoder();
+  const systemPrompt = buildSystemPrompt(profile, anchors, schedule);
+  const modelName = mode === "google"
+    ? (process.env.PRIMARY_MODEL?.replace("google/", "") ?? "gemini-3.8-flash")
+    : mode === "openrouter"
+      ? (process.env.PRIMARY_MODEL ?? "anthropic/claude-3.5-sonnet")
+      : "stub";
 
   const stream = new ReadableStream({
     async start(controller) {
       let full = "";
 
-      controller.enqueue(encoder.encode(`data: ${JSON.stringify({
-        type: "meta",
-        mode,
-        model: "anthropic/claude-3.5-sonnet",
-        energy: profile?.energyToday,
-        anchorsUsed: anchors.slice(0, 5).map((a) => a.id),
-        sessionsToday: schedule.sessions.length,
-      })}\n\n`));
+      controller.enqueue(
+        encoder.encode(
+          `data: ${JSON.stringify({
+            type: "meta",
+            mode,
+            model: modelName,
+            energy: profile?.energyToday,
+            anchorsUsed: anchors.slice(0, 5).map((a) => a.id),
+            sessionsToday: schedule.sessions.length,
+          })}\n\n`
+        )
+      );
+
+      const sendDelta = (text: string) => {
+        controller.enqueue(
+          encoder.encode(`data: ${JSON.stringify({ type: "delta", text })}\n\n`)
+        );
+      };
 
       try {
-        if (mode === "openrouter") {
+        if (mode === "google") {
+          const { geminiChatStream } = await import("@/server/ai/gemini");
+          const gstream = geminiChatStream({ systemPrompt, userPrompt: content });
+          const reader = gstream.getReader();
+          while (true) {
+            const { done, value } = await reader.read();
+            if (done) break;
+            if (value) {
+              full += value;
+              sendDelta(value);
+            }
+          }
+        } else if (mode === "openrouter") {
           const { openrouterChat } = await import("@/server/ai/openrouter");
           const result = await openrouterChat({
-            systemPrompt: buildSystemPrompt(profile, anchors, schedule),
+            systemPrompt,
             userPrompt: content,
             stream: true,
           });
           if (typeof result === "string") {
             full = result;
-            controller.enqueue(encoder.encode(`data: ${JSON.stringify({ type: "delta", text: full })}\n\n`));
+            sendDelta(full);
           } else {
             const reader = (result as ReadableStream<string>).getReader();
             while (true) {
-              const { done, value: delta } = await reader.read();
+              const { done, value } = await reader.read();
               if (done) break;
-              if (delta) {
-                full += delta;
-                controller.enqueue(encoder.encode(`data: ${JSON.stringify({ type: "delta", text: delta })}\n\n`));
+              if (value) {
+                full += value;
+                sendDelta(value);
               }
             }
           }
         } else {
           const canned = pickCanned(content);
-          // Имитация стриминга: побуквенно с микропаузой.
           const words = canned.split(/(\s+)/);
-          for (const part of words) {
-            if (!part) continue;
-            controller.enqueue(encoder.encode(`data: ${JSON.stringify({ type: "delta", text: part })}\n\n`));
-            full += part;
+          for (const word of words) {
+            if (!word) continue;
+            sendDelta(word);
+            full += word;
             await sleep(15 + Math.random() * 35);
           }
         }
       } catch (e) {
-        controller.enqueue(encoder.encode(`data: ${JSON.stringify({ type: "error", message: (e as Error).message })}\n\n`));
+        controller.enqueue(
+          encoder.encode(
+            `data: ${JSON.stringify({ type: "error", message: (e as Error).message })}\n\n`
+          )
+        );
       }
 
-      await appendChatMessage(userId, "maya", full, { model: "anthropic/claude-3.5-sonnet" });
-      controller.enqueue(encoder.encode(`data: ${JSON.stringify({ type: "done", fullText: full })}\n\n`));
+      await appendChatMessage(userId, "maya", full, { model: modelName });
+      controller.enqueue(
+        encoder.encode(`data: ${JSON.stringify({ type: "done", fullText: full })}\n\n`)
+      );
       controller.close();
     },
   });
@@ -93,9 +132,23 @@ export async function POST(req: NextRequest) {
   });
 }
 
-function buildSystemPrompt(profile: unknown, anchors: { category: string; content: string }[], schedule: { sessions: { startsAt: string; title: string }[] }) {
-  const p = profile as { name?: string; energyToday?: number; mayaTone?: string; mayaSoftness?: number };
-  return `Ты Майя — эмпатичный AI-наставник для школьницы. Имя: ${p?.name ?? "Аня"}. Энергия сегодня: ${p?.energyToday ?? "—"}/10. Тон: ${p?.mayaTone ?? "caring"}. Мягкость дедлайнов: ${p?.mayaSoftness ?? 95}%. Якоря памяти: ${anchors.slice(0, 5).map((a) => `${a.category}: ${a.content}`).join("; ")}. Расписание сегодня: ${schedule.sessions.map((s) => `${s.startsAt} ${s.title}`).join("; ")}. Отвечай по-русски, ≤6 предложений, мягко, в стиле «ты», без токсичной продуктивности.`;
+function buildSystemPrompt(
+  profile: unknown,
+  anchors: { category: string; content: string }[],
+  schedule: { sessions: { startsAt: string; title: string }[] }
+) {
+  const p = profile as {
+    name?: string;
+    energyToday?: number;
+    mayaTone?: string;
+    mayaSoftness?: number;
+  };
+  return `Ты Майя — эмпатичный AI-наставник для школьницы. Имя: ${p?.name ?? "Аня"}. Энергия сегодня: ${p?.energyToday ?? "—"}/10. Тон: ${p?.mayaTone ?? "caring"}. Мягкость дедлайнов: ${p?.mayaSoftness ?? 95}%. Якоря памяти: ${anchors
+    .slice(0, 5)
+    .map((a) => `${a.category}: ${a.content}`)
+    .join("; ")}. Расписание сегодня: ${schedule.sessions
+    .map((s) => `${s.startsAt} ${s.title}`)
+    .join("; ")}. Отвечай по-русски, ≤6 предложений, мягко, в стиле «ты», без токсичной продуктивности.`;
 }
 
 function pickCanned(input: string): string {

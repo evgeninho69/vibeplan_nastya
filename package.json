@@ -21,7 +21,10 @@
     "node": ">=20"
   },
   "devDependencies": {
-    "vitest": "^2.1.8",
-    "@vitest/coverage-v8": "^2.1.8"
+    "@vitest/coverage-v8": "^2.1.8",
+    "vitest": "^2.1.8"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1"
   }
 }

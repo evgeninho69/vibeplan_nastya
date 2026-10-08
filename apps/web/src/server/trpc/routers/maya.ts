@@ -2,15 +2,20 @@
  * AI-наставник Майя. Phase 6.
  *
  * Сейчас — стаб: возвращает шаблонные «эмпатичные» ответы из canned-массива.
- * Когда в env появится OPENROUTER_API_KEY, модуль автоматически начнёт стримить
- * ответы от claude-3.5-sonnet через apps/web/src/server/ai/openrouter.ts.
+ * При наличии GOOGLE_API_KEY используется Gemini (`google/gemini-2.5-flash`).
+ * При наличии OPENROUTER_API_KEY используется OpenRouter (anthropic/claude-3.5-sonnet).
+ * Приоритет: Gemini > OpenRouter > stub.
  */
 import { z } from "zod";
 import { router, publicProcedure } from "../trpc";
 import { listMemoryAnchors, getTodaySchedule, getProfile, TODAY, appendChatMessage } from "../data";
 
-type Mode = "stub" | "openrouter";
-const mode: Mode = process.env.OPENROUTER_API_KEY ? "openrouter" : "stub";
+type Mode = "stub" | "google" | "openrouter";
+const mode: Mode = process.env.GOOGLE_API_KEY
+  ? "google"
+  : process.env.OPENROUTER_API_KEY
+    ? "openrouter"
+    : "stub";
 
 // Canned-ответы в духе DESIGN.md: эмпатично, без давления, ≤6 предложений,
 // с конкретным микро-шагом.
@@ -79,21 +84,71 @@ export const mayaRouter = router({
     }),
 
   /** Перегенерировать вайб дня (используется кнопкой «Другой вайб» в UI). */
-  regenerateVibe: publicProcedure.mutation(() => ({
-    quote: pick([
-      "«Маленький шаг ведёт к большой цели. Ты уже в пути.»",
-      "«Спокойный шаг тоже ведёт к цели. Ты всё успеваешь.»",
-      "«Сегодняшняя пауза — это завтрашняя сила. Дыши глубже.»",
-      "«Ты не отстаёшь. Ты идёшь своим темпом, и это правильно.»",
-      "«Мягкий фокус — это тоже фокус. Начни с 15 минут.»",
-    ]),
-    suggestion: pick([
-      "Настя: Сделай глубокий вдох перед уроком матчи.",
-      "Ксюша: Предложи встречу в «Слое» на 18:00 — идеальное окно.",
-      "Майя: 5 мин дыхательной паузы, потом к задаче №16.",
-      "Майя: Перенеси одну сложную задачу на завтра.",
-    ]),
-    energyPred: 8,
-    mood: pick(["soft", "focused", "creative"] as const),
-  })),
+  regenerateVibe: publicProcedure.mutation(async () => {
+    if (mode === "google") {
+      try {
+        const { geminiChat } = await import("@/server/ai/gemini");
+        const text = await geminiChat({
+          systemPrompt: "Ты Майя — эмпатичный AI-наставник. Сгенерируй JSON {quote, suggestion} с коротким вайбом дня и одним микро-предложением. Только JSON, без пояснений.",
+          userPrompt: "Сгенерируй вайб дня.",
+          temperature: 0.9,
+        });
+        if (typeof text === "string") {
+          try {
+            const m = text.match(/\{[\s\S]*\}/);
+            if (m) {
+              const j = JSON.parse(m[0]);
+              return {
+                quote: String(j.quote ?? "«Мягкий фокус — это тоже фокус.»"),
+                suggestion: String(j.suggestion ?? "Майя: начни с 15 минут."),
+                energyPred: 8,
+                mood: "soft" as const,
+              };
+            }
+          } catch {}
+        }
+      } catch {}
+    }
+    if (mode === "openrouter") {
+      try {
+        const { openrouterChat } = await import("@/server/ai/openrouter");
+        const text = await openrouterChat({
+          systemPrompt: "Ты Майя — эмпатичный AI-наставник. Сгенерируй JSON {quote, suggestion} с коротким вайбом и микро-предложением. Только JSON.",
+          userPrompt: "Сгенерируй вайб дня.",
+          temperature: 0.9,
+        });
+        if (typeof text === "string") {
+          try {
+            const m = text.match(/\{[\s\S]*\}/);
+            if (m) {
+              const j = JSON.parse(m[0]);
+              return {
+                quote: String(j.quote ?? "«Мягкий фокус — это тоже фокус.»"),
+                suggestion: String(j.suggestion ?? "Майя: начни с 15 минут."),
+                energyPred: 8,
+                mood: "soft" as const,
+              };
+            }
+          } catch {}
+        }
+      } catch {}
+    }
+    return {
+      quote: pick([
+        "«Маленький шаг ведёт к большой цели. Ты уже в пути.»",
+        "«Спокойный шаг тоже ведёт к цели. Ты всё успеваешь.»",
+        "«Сегодняшняя пауза — это завтрашняя сила. Дыши глубже.»",
+        "«Ты не отстаёшь. Ты идёшь своим темпом, и это правильно.»",
+        "«Мягкий фокус — это тоже фокус. Начни с 15 минут.»",
+      ]),
+      suggestion: pick([
+        "Настя: Сделай глубокий вдох перед уроком матчи.",
+        "Ксюша: Предложи встречу в «Слое» на 18:00 — идеальное окно.",
+        "Майя: 5 мин дыхательной паузы, потом к задаче №16.",
+        "Майя: Перенеси одну сложную задачу на завтра.",
+      ]),
+      energyPred: 8,
+      mood: pick(["soft", "focused", "creative"] as const),
+    };
+  }),
 });
